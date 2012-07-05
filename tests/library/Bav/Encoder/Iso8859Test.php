@@ -32,42 +32,6 @@ class Iso8859Test extends \PHPUnit_Framework_TestCase
         
     }
 
-    /**
-     * @covers Bav\Encoder\Iso8859::convert
-     * @todo Implement testConvert().
-     */
-    public function testConvert()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers Bav\Encoder\Iso8859::strlen
-     * @todo Implement testStrlen().
-     */
-    public function testStrlen()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers Bav\Encoder\Iso8859::substr
-     * @todo Implement testSubstr().
-     */
-    public function testSubstr()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
     public function testIsSupportedForIso8859From1to15ReturnsTrue()
     {
         for ($i = 1; $i < 16; $i++) {

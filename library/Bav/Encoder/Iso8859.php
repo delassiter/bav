@@ -14,10 +14,10 @@ class Iso8859 implements \Bav\EncoderInterface
      */
     public function convert($string, $fromEncoding)
     {
-        if ($fromEncoding == 'UTF-8') {
+//        if ($fromEncoding == 'UTF-8') {
             return $string;
-        }
-        throw new \Exception();
+//        }
+//        throw new \Exception();
     }
     
     /**

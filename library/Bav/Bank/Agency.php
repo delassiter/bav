@@ -73,6 +73,8 @@ class Agency
      * @var string
      */
     protected $name = '';
+    
+    protected $isMain = false;
 
     /**
      * Don't create this object directly. Use BAV_Bank->getMainAgency()
@@ -86,16 +88,16 @@ class Agency
      * @param string $bic might be empty
      * @param string $pan might be empty
      */
-    public function __construct($id, BAV_Bank $bank, $name, $shortTerm, $city, $postcode, $bic = '', $pan = '')
+    public function __construct($id, $name, $shortTerm, $city, $postcode, $bic = '', $pan = '', $isMain = false)
     {
         $this->id = (int) $id;
-        $this->bank = $bank;
         $this->bic = $bic;
         $this->postcode = $postcode;
         $this->city = $city;
         $this->name = $name;
         $this->shortTerm = $shortTerm;
         $this->pan = $pan;
+        $this->isMain = $isMain;
     }
 
     /**
@@ -103,7 +105,7 @@ class Agency
      */
     public function isMainAgency()
     {
-        return $this->bank->getMainAgency() === $this;
+        return $this->isMain;
     }
 
     /**

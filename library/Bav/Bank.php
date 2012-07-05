@@ -41,7 +41,7 @@ class Bank
     /**
      * @var string
      */
-    protected $bankID = '';
+    protected $bankId = '';
     /**
      * @var string
      */
@@ -55,24 +55,20 @@ class Bank
      */
     protected $dataBackend;
     /**
-     * @var BAV_Agency
-     */
-    protected $mainAgency;
-    /**
      * @var Array
      */
     protected $agencies;
-
+    
     /**
      * Do not even think to use new BAV_Bank()!
      * Go and use BAV_DataBackend->getBank($bankID).
      *
-     * @param string $bankID
+     * @param string $bankId
      * @param string $validationType
      */
-    public function __construct($bankID, $validationType)
+    public function __construct($bankId, $validationType)
     {
-        $this->bankID = $bankID;
+        $this->bankId = $bankId;
         $this->validationType = $validationType;
     }
 
@@ -89,7 +85,7 @@ class Bank
      */
     public function getBankID()
     {
-        return (string) $this->bankID;
+        return (string) $this->bankId;
     }
 
     /**
@@ -100,10 +96,10 @@ class Bank
      */
     public function getMainAgency()
     {
-        if (is_null($this->mainAgency)) {
-            $this->mainAgency = $this->dataBackend->_getMainAgency($this);
+        /* @var $agency Bank\Agency */
+        foreach ($this->agencies as $agency) {
+            if ($agency->isMainAgency()) return $agency;
         }
-        return $this->mainAgency;
     }
 
     /**
@@ -114,9 +110,6 @@ class Bank
      */
     public function getAgencies()
     {
-        if (is_null($this->agencies)) {
-            $this->agencies = $this->dataBackend->_getAgencies($this);
-        }
         return $this->agencies;
     }
 
@@ -143,5 +136,15 @@ class Bank
         }
         return $this->validator;
     }
-
+    
+    public function addAgency(Bank\Agency $agency)
+    {
+        $this->agencies[] = $agency;
+    }
+    
+    public function setAgencies($agencies)
+    {
+        $this->agencies = $agencies;
+    }
+    
 }

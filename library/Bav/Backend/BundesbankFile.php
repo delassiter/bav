@@ -7,6 +7,8 @@ class BundesbankFile implements BackendInterface
 {
     
     protected $content = array();
+    protected $contextCache = array();
+    protected $instances = array();
     protected $parser = array();
     
     public function __construct($fileName, $encoding = 'ISO-8859-15')
@@ -30,9 +32,21 @@ class BundesbankFile implements BackendInterface
         }
     }
     
-    public function getAgencies(Bank $bank)
+    protected function getAgencies($bankId)
     {
-        
+        try {
+            $context = $this->defineContextInterval($bankId);
+            $agencies = array();
+            for ($line = $context->getStart(); $line <= $context->getEnd(); $line++) {
+                $content = $this->parser->readLine($line);
+                $agencies[] = $this->parser->getAgency($content);
+            }
+            return $agencies;
+            
+        } catch (\Exception $e) {
+            var_dump($e);
+            throw new \LogicException("Start and end should be defined.");
+        }
     }
     
     public function getAllBanks()
@@ -40,14 +54,13 @@ class BundesbankFile implements BackendInterface
         
     }
     
-    public function getBank($bankID)
+    public function getBank($bankId)
     {
-        
-    }
-    
-    public function getMainAgency(Bank $bank)
-    {
-        
+        if (! isset($this->instances[$bankId])) {
+            $this->instances[$bankId] = $this->getNewBank($bankId);
+
+        }
+        return $this->instances[$bankId];
     }
     
     /**
@@ -89,14 +102,87 @@ class BundesbankFile implements BackendInterface
         
         if ($blz < $bankID) {
             return $this->findBank($bankID, $line + 1, $end);
-        
         } elseif ($blz > $bankID) {
             return $this->findBank($bankID, $offset, $line - 1);
-            
         } else {
-            return $this->parser->getBank($this, $this->parser->readLine($line));
+            return $this->parser->getBank($this->parser->readLine($line));
+        }
+
+    }
+    
+    /**
+     * @throws BAV_DataBackendException_IO
+     * @throws BAV_DataBackendException_BankNotFound
+     * @param String $bankId
+     * @see BAV_DataBackend::getNewBank()
+     * @return BAV_Bank
+     */
+    protected function getNewBank($bankId) {
+        try {
+            $this->parser->rewind();
+            /**
+             * TODO Binary Search is also possible on $this->contextCache,
+             *      to reduce the interval of $offset and $end;
+             */
+            /* @var $bank \Bav\Bank */
+            if (isset($this->contextCache[$bankId])) {
+                $bank = $this->findBank(
+                    $bankId,
+                    $this->contextCache[$bankId]->getLine(),
+                    $this->contextCache[$bankId]->getLine()
+                );
+        
+            } else {
+                $bank = $this->findBank($bankId, 0, $this->parser->getLines());
+                $agencies = $this->getAgencies($bankId);
+                $bank->setAgencies($agencies);
+            }
+            
+            return $bank;
+            
+        } catch (Parser\Exception\ParseException $e) {
+            throw new \Bav\Exception\IoException();
         
         }
+    }
+    
+    
+    /**
+     * @return Parser\Context\BundesbankBank
+     */
+    protected function defineContextInterval($bankId) {
+        if (! isset($this->contextCache[$bankId])) {
+            throw new \LogicException("The contextCache object should exist!");
+
+        }
+        $context = $this->contextCache[$bankId];
+        /**
+         * Find start
+         */
+        if (! $context->isStartDefined()) {
+            for ($start = $context->getLine() - 1; $start >= 0; $start--) {
+                if ($this->parser->getBankId($start) != $bankId) {
+                    break;
+                    
+                }
+            }
+            $context->setStart($start + 1);
+            
+        }
+        /**
+         * Find end
+         */
+        if (! $context->isEndDefined()) {
+            for ($end = $context->getLine() + 1; $end <= $this->parser->getLines(); $end++) {
+                if ($this->parser->getBankId($end) != $bankId) {
+                    break;
+                    
+                }
+            }
+            $context->setEnd($end - 1);
+            
+        }
+        return $context;
     }
 
 }

@@ -6,7 +6,7 @@ use Bav\Exception as BavException;
 
 class BundesbankFile
 {
-    
+    const FILE_ENCODING     = 'ISO-8859-15';
     const BANKID_OFFSET     = 0;
     const BANKID_LENGTH     = 8;
     const ISMAIN_OFFSET     = 8;
@@ -56,7 +56,7 @@ class BundesbankFile
     public function __construct($file, $encoding)
     {
         $this->file = $file;
-        $this->encoding = $encoding;
+        $this->encoder = \Bav\Encoder::factory($encoding);
     }
 
     /**
@@ -194,15 +194,16 @@ class BundesbankFile
         
         }
         $type   = $this->encoder->substr($line, self::TYPE_OFFSET,      self::TYPE_LENGTH);
-        $bankID = $this->encoder->substr($line, self::BANKID_OFFSET,    self::BANKID_LENGTH);
-        return new \Bav\Bank($bankID, $type);
+        $bankId = $this->encoder->substr($line, self::BANKID_OFFSET,    self::BANKID_LENGTH);
+  
+        return new \Bav\Bank($bankId, $type);
     }
     /**
      * @throws Exception\ParseException
      * @param string $line
      * @return \Bav\Bank\Agency
      */
-    public function getAgency(BAV_Bank $bank, $line)
+    public function getAgency($line)
     {
         if ($this->encoder->strlen($line) < self::ID_OFFSET + self::ID_LENGTH) {
             throw new Exception\ParseException("Invalid line length.");
@@ -215,7 +216,10 @@ class BundesbankFile
         $postcode = $this->encoder->substr($line, self::POSTCODE_OFFSET, self::POSTCODE_LENGTH);
         $bic = trim($this->encoder->substr($line, self::BIC_OFFSET, self::BIC_LENGTH));
         $pan = trim($this->encoder->substr($line, self::PAN_OFFSET, self::PAN_LENGTH));
-        return new \Bav\Bank\Agency($id, $bank, $name, $shortTerm, $city, $postcode, $bic, $pan);
+        
+        $mainAgency = $this->isMainAgency($line);
+        
+        return new \Bav\Bank\Agency($id, $name, $shortTerm, $city, $postcode, $bic, $pan, $mainAgency);
     }
     /**
      * @throws Exception\ParseException
