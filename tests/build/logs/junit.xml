@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Bav\Validator\De\System03Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System03Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.016695">
-    <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System03Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System03Test.php" line="12" assertions="4" time="0.009179"/>
-    <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System03Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System03Test.php" line="22" assertions="4" time="0.007516"/>
+  <testsuite name="Bav\Validator\De\System17Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System17Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="3" failures="0" errors="0" time="0.009922">
+    <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System17Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System17Test.php" line="12" assertions="1" time="0.005723"/>
+    <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System17Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System17Test.php" line="22" assertions="2" time="0.004199"/>
   </testsuite>
 </testsuites>
