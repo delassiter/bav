@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1341518026">
-  <project timestamp="1341518026">
+<coverage generated="1341555031">
+  <project timestamp="1341555031">
     <package name="Bav\Backend">
       <file name="/home/dl/Projects/bav/library/Bav/Backend/BundesbankFile.php">
         <class name="BundesbankFile" namespace="Bav\Backend">
@@ -461,28 +461,28 @@
       </file>
       <file name="/home/dl/Projects/bav/library/Bav/Validator/Math.php">
         <class name="Math" namespace="Bav\Validator">
-          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="12" elements="18" coveredelements="15"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="7" elements="18" coveredelements="9"/>
         </class>
-        <line num="14" type="method" name="crossSum" crap="2" count="2"/>
-        <line num="16" type="stmt" count="2"/>
-        <line num="17" type="stmt" count="2"/>
-        <line num="19" type="stmt" count="2"/>
-        <line num="20" type="stmt" count="2"/>
-        <line num="21" type="stmt" count="2"/>
-        <line num="23" type="stmt" count="2"/>
-        <line num="27" type="method" name="getNormalizedPosition" crap="5.02" count="2"/>
+        <line num="14" type="method" name="crossSum" crap="6" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="27" type="method" name="getNormalizedPosition" crap="4.13" count="2"/>
         <line num="29" type="stmt" count="2"/>
         <line num="30" type="stmt" count="0"/>
         <line num="34" type="stmt" count="2"/>
         <line num="35" type="stmt" count="2"/>
-        <line num="38" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="2"/>
         <line num="41" type="method" name="normalizeAccount" crap="2.06" count="2"/>
         <line num="43" type="stmt" count="2"/>
         <line num="44" type="stmt" count="2"/>
         <line num="45" type="stmt" count="0"/>
         <line num="49" type="stmt" count="2"/>
         <line num="52" type="stmt" count="1"/>
-        <metrics loc="51" ncloc="45" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="12" elements="18" coveredelements="13"/>
+        <metrics loc="51" ncloc="45" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="7" elements="18" coveredelements="7"/>
       </file>
     </package>
     <package name="Bav\Validator\De">
@@ -502,17 +502,17 @@
       </file>
       <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System01.php">
         <class name="System01" namespace="Bav\Validator\De">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+          <metrics methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="7" coveredelements="3"/>
         </class>
-        <line num="14" type="method" name="iterationStep" crap="2" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
+        <line num="14" type="method" name="iterationStep" crap="1" count="2"/>
+        <line num="16" type="stmt" count="2"/>
+        <line num="17" type="stmt" count="2"/>
         <line num="19" type="method" name="getResult" crap="6" count="0"/>
         <line num="21" type="stmt" count="0"/>
         <line num="22" type="stmt" count="0"/>
         <line num="23" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <metrics loc="24" ncloc="24" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        <line num="25" type="stmt" count="1"/>
+        <metrics loc="24" ncloc="24" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="7" coveredelements="3"/>
       </file>
       <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System02.php">
         <class name="System02" namespace="Bav\Validator\De">
@@ -556,16 +556,16 @@
       </file>
       <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System06.php">
         <class name="System06" namespace="Bav\Validator\De">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
         </class>
-        <line num="13" type="method" name="getResult" crap="6" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="20" type="stmt" count="0"/>
-        <metrics loc="19" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        <line num="13" type="method" name="getResult" crap="2" count="2"/>
+        <line num="14" type="stmt" count="2"/>
+        <line num="15" type="stmt" count="2"/>
+        <line num="16" type="stmt" count="2"/>
+        <line num="17" type="stmt" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="20" type="stmt" count="1"/>
+        <metrics loc="19" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </file>
       <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System07.php">
         <class name="System07" namespace="Bav\Validator\De">
@@ -646,18 +646,171 @@
       </file>
       <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System17.php">
         <class name="System17" namespace="Bav\Validator\De">
-          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
         </class>
-        <line num="16" type="method" name="iterationStep" crap="1" count="2"/>
-        <line num="18" type="stmt" count="2"/>
-        <line num="19" type="stmt" count="2"/>
-        <line num="21" type="method" name="getResult" crap="2" count="2"/>
-        <line num="23" type="stmt" count="2"/>
-        <line num="24" type="stmt" count="2"/>
-        <line num="26" type="stmt" count="1"/>
-        <metrics loc="25" ncloc="25" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        <line num="16" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="21" type="method" name="getResult" crap="6" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <metrics loc="25" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System18.php">
+        <class name="System18" namespace="Bav\Validator\De">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <line num="8" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <metrics loc="11" ncloc="11" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System19.php">
+        <class name="System19" namespace="Bav\Validator\De">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <line num="8" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <metrics loc="11" ncloc="11" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System20.php">
+        <class name="System20" namespace="Bav\Validator\De">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <line num="8" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <metrics loc="11" ncloc="11" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System21.php">
+        <class name="System21" namespace="Bav\Validator\De">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        </class>
+        <line num="12" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="method" name="getResult" crap="6" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <metrics loc="22" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System22.php">
+        <class name="System22" namespace="Bav\Validator\De">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="12" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="method" name="getResult" crap="2" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System23.php">
+        <class name="System23" namespace="Bav\Validator\De">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <line num="8" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <metrics loc="13" ncloc="13" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System24.php">
+        <class name="System24" namespace="Bav\Validator\De">
+          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+        </class>
+        <line num="14" type="method" name="init" crap="2" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="21" type="method" name="getResult" crap="2" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="27" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <metrics loc="30" ncloc="30" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System25.php">
+        <class name="System25" namespace="Bav\Validator\De">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+        </class>
+        <line num="12" type="method" name="getResult" crap="30" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="34" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <metrics loc="37" ncloc="37" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System26.php">
+        <class name="System26" namespace="Bav\Validator\De">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="15" type="method" name="init" crap="6" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <metrics loc="23" ncloc="23" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System28.php">
+        <class name="System28" namespace="Bav\Validator\De">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <line num="8" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <metrics loc="14" ncloc="14" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System30.php">
+        <class name="System30" namespace="Bav\Validator\De">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+        </class>
+        <line num="14" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <metrics loc="18" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System31.php">
+        <class name="System31" namespace="Bav\Validator\De">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+        </class>
+        <line num="12" type="method" name="iterationStep" crap="2" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="method" name="getResult" crap="12" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <metrics loc="28" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+      </file>
+      <file name="/home/dl/Projects/bav/library/Bav/Validator/De/System32.php">
+        <class name="System32" namespace="Bav\Validator\De">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <line num="8" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <metrics loc="11" ncloc="11" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
       </file>
     </package>
-    <metrics files="34" loc="1545" ncloc="1095" classes="32" methods="87" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="313" coveredstatements="37" elements="400" coveredelements="44"/>
+    <metrics files="47" loc="1795" ncloc="1345" classes="45" methods="100" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="362" coveredstatements="36" elements="462" coveredelements="42"/>
   </project>
 </coverage>
