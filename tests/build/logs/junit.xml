@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Bav\Validator\De\System32Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System32Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.015199">
-    <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System32Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System32Test.php" line="12" assertions="6" time="0.011583"/>
-    <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System32Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System32Test.php" line="22" assertions="2" time="0.003616"/>
+  <testsuite name="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.011439">
+    <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" line="12" assertions="2" time="0.007609"/>
+    <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" line="22" assertions="2" time="0.003830"/>
   </testsuite>
 </testsuites>
