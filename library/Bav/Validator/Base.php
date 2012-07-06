@@ -13,6 +13,17 @@ abstract class Base
     
     protected $doNormalization = true;
     
+    public function getChecknumberPosition()
+    {
+        return $this->checknumberPosition;
+    }
+
+    public function setChecknumberPosition($checknumberPosition)
+    {
+        $this->checknumberPosition = $checknumberPosition;
+    }
+
+        
     protected function getChecknumber()
     {
         return $this->account{Math::getNormalizedPosition($this->account, $this->checknumberPosition)};

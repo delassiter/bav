@@ -71,12 +71,12 @@
           <td class="coverNumLo">0 / 1</td>
           <td class="crap"><acronym title="Change Risk Anti-Patterns (CRAP) Index">CRAP</acronym></td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="0.00%">
-                <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+            <div class="coverBarOutline" title="75.00%">
+                <div class="size chameleon"  style="width:75%" title="75.00%"></div>
             </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 8</td>
+          <td class="coverPerHi">75.00%</td>
+          <td class="coverNumHi">6 / 8</td>
         </tr>
 
         <tr>
@@ -95,14 +95,14 @@
           </td>
           <td class="coverPerLo">0.00%</td>
           <td class="coverNumLo">0 / 1</td>
-          <td class="crap">12</td>
+          <td class="crap">3.14</td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="0.00%">
-                <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+            <div class="coverBarOutline" title="75.00%">
+                <div class="size chameleon"  style="width:75%" title="75.00%"></div>
             </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 8</td>
+          <td class="coverPerHi">75.00%</td>
+          <td class="coverNumHi">6 / 8</td>
         </tr>
 
         <tr>
@@ -114,14 +114,14 @@
           </td>
           <td class="coverPerLo">0.00%</td>
           <td class="coverNumLo">0 / 1</td>
-          <td class="crap">12</td>
+          <td class="crap">3.14</td>
           <td class="coverBar">
-              <div class="coverBarOutline" title="0.00%">
-                  <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+              <div class="coverBarOutline" title="75.00%">
+                  <div class="size chameleon"  style="width:75%" title="75.00%"></div>
               </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 8</td>
+          <td class="coverPerHi">75.00%</td>
+          <td class="coverNumHi">6 / 8</td>
         </tr>
 
 
@@ -147,16 +147,16 @@
 <span class="lineNum" id="container8"><a name="8"></a><a href="#8" id="line8">       8</a> </span>                : {                                                                    
 <span class="lineNum" id="container9"><a name="9"></a><a href="#9" id="line9">       9</a> </span>                :                                                                      
 <span class="lineNum" id="container10"><a name="10"></a><a href="#10" id="line10">      10</a> </span>                :     protected function getResult() {                                 
-<span class="lineNum" id="container11"><a name="11"></a><a href="#11" id="line11">      11</a> </span><span class="lineNoCov">              0 :         $result = $this-&gt;modulo - $this-&gt;accumulator % $this-&gt;modulo;</span>
+<span class="lineNum" id="container11"><a name="11"></a><a href="#11" id="line11">      11</a> </span><span class="lineCov">              2 :         $result = $this-&gt;modulo - $this-&gt;accumulator % $this-&gt;modulo;</span>
 <span class="lineNum" id="container12"><a name="12"></a><a href="#12" id="line12">      12</a> </span>                :         switch ($result) {                                           
-<span class="lineNum" id="container13"><a name="13"></a><a href="#13" id="line13">      13</a> </span><span class="lineNoCov">              0 :             case 11:                                                 </span>
-<span class="lineNum" id="container14"><a name="14"></a><a href="#14" id="line14">      14</a> </span><span class="lineNoCov">              0 :                 $result = 0;                                         </span>
-<span class="lineNum" id="container15"><a name="15"></a><a href="#15" id="line15">      15</a> </span><span class="lineNoCov">              0 :                 break;                                               </span>
-<span class="lineNum" id="container16"><a name="16"></a><a href="#16" id="line16">      16</a> </span><span class="lineNoCov">              0 :             case 10:                                                 </span>
+<span class="lineNum" id="container13"><a name="13"></a><a href="#13" id="line13">      13</a> </span><span class="lineCov">              2 :             case 11:                                                 </span>
+<span class="lineNum" id="container14"><a name="14"></a><a href="#14" id="line14">      14</a> </span><span class="lineCov">              1 :                 $result = 0;                                         </span>
+<span class="lineNum" id="container15"><a name="15"></a><a href="#15" id="line15">      15</a> </span><span class="lineCov">              1 :                 break;                                               </span>
+<span class="lineNum" id="container16"><a name="16"></a><a href="#16" id="line16">      16</a> </span><span class="lineCov">              2 :             case 10:                                                 </span>
 <span class="lineNum" id="container17"><a name="17"></a><a href="#17" id="line17">      17</a> </span><span class="lineNoCov">              0 :                 $result = 9;                                         </span>
 <span class="lineNum" id="container18"><a name="18"></a><a href="#18" id="line18">      18</a> </span><span class="lineNoCov">              0 :                 break;                                               </span>
 <span class="lineNum" id="container19"><a name="19"></a><a href="#19" id="line19">      19</a> </span>                :         }                                                            
-<span class="lineNum" id="container20"><a name="20"></a><a href="#20" id="line20">      20</a> </span><span class="lineNoCov">              0 :         return (string)$result === $this-&gt;getCheckNumber();          </span>
+<span class="lineNum" id="container20"><a name="20"></a><a href="#20" id="line20">      20</a> </span><span class="lineCov">              2 :         return (string)$result === $this-&gt;getCheckNumber();          </span>
 <span class="lineNum" id="container21"><a name="21"></a><a href="#21" id="line21">      21</a> </span>                :     }                                                                
 <span class="lineNum" id="container22"><a name="22"></a><a href="#22" id="line22">      22</a> </span>                :                                                                      
 
@@ -167,7 +167,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.2</a> and PHPUnit 3.6.11 at Fri Jul 6 8:33:23 CEST 2012.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu3.2</a> and PHPUnit 3.6.11 at Fri Jul 6 10:36:00 CEST 2012.</td></tr>
     </table>
 
     <br />
@@ -177,6 +177,36 @@
       $E = YAHOO.util.Event;
       YAHOO.namespace("phpunit.container");
       YAHOO.phpunit.container.panelsData = {
+        "panel11": {
+          "header": "2 tests cover line 11",
+          "body": "<ul><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithValidAccountReturnsTrue</li><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithInvalidAccountReturnsFalse</li></ul>",
+          "footer": ""
+        },
+        "panel13": {
+          "header": "2 tests cover line 13",
+          "body": "<ul><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithValidAccountReturnsTrue</li><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithInvalidAccountReturnsFalse</li></ul>",
+          "footer": ""
+        },
+        "panel14": {
+          "header": "1 test covers line 14",
+          "body": "<ul><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithValidAccountReturnsTrue</li></ul>",
+          "footer": ""
+        },
+        "panel15": {
+          "header": "1 test covers line 15",
+          "body": "<ul><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithValidAccountReturnsTrue</li></ul>",
+          "footer": ""
+        },
+        "panel16": {
+          "header": "2 tests cover line 16",
+          "body": "<ul><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithValidAccountReturnsTrue</li><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithInvalidAccountReturnsFalse</li></ul>",
+          "footer": ""
+        },
+        "panel20": {
+          "header": "2 tests cover line 20",
+          "body": "<ul><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithValidAccountReturnsTrue</li><li class=\"testPassed\">Bav\\Validator\\De\\System11Test::testWithInvalidAccountReturnsFalse</li></ul>",
+          "footer": ""
+        },
       "dummy": ""
       };
 

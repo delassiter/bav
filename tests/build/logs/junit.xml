@@ -1,7 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.011439">
-    <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" line="12" assertions="2" time="0.007609"/>
-    <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" line="22" assertions="2" time="0.003830"/>
+  <testsuite name="library/Bav/Validator/De/" tests="107" assertions="274" failures="0" errors="0" time="0.593932">
+    <testsuite name="Bav\Validator\De\System00Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System00Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.021461">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System00Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System00Test.php" line="12" assertions="4" time="0.012699"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System00Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System00Test.php" line="22" assertions="4" time="0.008762"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System01Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System01Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.016830">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System01Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System01Test.php" line="12" assertions="4" time="0.007204"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System01Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System01Test.php" line="22" assertions="4" time="0.009626"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System02Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System02Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.014470">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System02Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System02Test.php" line="12" assertions="4" time="0.008038"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System02Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System02Test.php" line="22" assertions="4" time="0.006432"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System03Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System03Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.013495">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System03Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System03Test.php" line="12" assertions="4" time="0.007100"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System03Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System03Test.php" line="22" assertions="4" time="0.006395"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System04Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System04Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.013892">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System04Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System04Test.php" line="12" assertions="4" time="0.007314"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System04Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System04Test.php" line="22" assertions="4" time="0.006578"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System05Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System05Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.014276">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System05Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System05Test.php" line="12" assertions="4" time="0.007504"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System05Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System05Test.php" line="22" assertions="4" time="0.006772"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System06Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System06Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008497">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System06Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System06Test.php" line="12" assertions="2" time="0.004504"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System06Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System06Test.php" line="22" assertions="2" time="0.003993"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System07Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System07Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008828">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System07Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System07Test.php" line="12" assertions="2" time="0.004845"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System07Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System07Test.php" line="22" assertions="2" time="0.003983"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System08Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System08Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="5" failures="0" errors="0" time="0.012268">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System08Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System08Test.php" line="12" assertions="2" time="0.005670"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System08Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System08Test.php" line="22" assertions="3" time="0.006598"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System09Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System09Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="1" assertions="5" failures="0" errors="0" time="0.004005">
+      <testcase name="testWithAccountReturnsTrue" class="Bav\Validator\De\System09Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System09Test.php" line="12" assertions="5" time="0.004005"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System10Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System10Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008818">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System10Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System10Test.php" line="12" assertions="2" time="0.004751"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System10Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System10Test.php" line="22" assertions="2" time="0.004067"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System11Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System11Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008496">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System11Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System11Test.php" line="12" assertions="2" time="0.004558"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System11Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System11Test.php" line="22" assertions="2" time="0.003938"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System13Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System13Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="5" failures="0" errors="0" time="0.011588">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System13Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System13Test.php" line="12" assertions="3" time="0.006195"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System13Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System13Test.php" line="22" assertions="2" time="0.005393"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System16Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System16Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008883">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System16Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System16Test.php" line="12" assertions="2" time="0.004734"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System16Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System16Test.php" line="22" assertions="2" time="0.004149"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System17Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System17Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="3" failures="0" errors="0" time="0.007726">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System17Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System17Test.php" line="12" assertions="1" time="0.003514"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System17Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System17Test.php" line="22" assertions="2" time="0.004212"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System18Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System18Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008688">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System18Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System18Test.php" line="12" assertions="2" time="0.004680"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System18Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System18Test.php" line="22" assertions="2" time="0.004008"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System19Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System19Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008633">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System19Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System19Test.php" line="12" assertions="2" time="0.004580"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System19Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System19Test.php" line="22" assertions="2" time="0.004053"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System20Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System20Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008718">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System20Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System20Test.php" line="12" assertions="2" time="0.004689"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System20Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System20Test.php" line="22" assertions="2" time="0.004029"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System21Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System21Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.010552">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System21Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System21Test.php" line="12" assertions="2" time="0.005659"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System21Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System21Test.php" line="22" assertions="2" time="0.004893"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System22Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System22Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008873">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System22Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System22Test.php" line="12" assertions="2" time="0.004775"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System22Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System22Test.php" line="22" assertions="2" time="0.004098"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System23Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System23Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007928">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System23Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System23Test.php" line="12" assertions="2" time="0.004172"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System23Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System23Test.php" line="22" assertions="2" time="0.003756"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System24Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System24Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="6" failures="0" errors="0" time="0.017927">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System24Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System24Test.php" line="12" assertions="4" time="0.011965"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System24Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System24Test.php" line="22" assertions="2" time="0.005962"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System25Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System25Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="3" failures="0" errors="0" time="0.007711">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System25Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System25Test.php" line="12" assertions="1" time="0.003637"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System25Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System25Test.php" line="22" assertions="2" time="0.004074"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System26Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System26Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="5" failures="0" errors="0" time="0.009470">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System26Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System26Test.php" line="12" assertions="3" time="0.005576"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System26Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System26Test.php" line="22" assertions="2" time="0.003894"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System28Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System28Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.009139">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System28Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System28Test.php" line="12" assertions="2" time="0.005296"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System28Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System28Test.php" line="22" assertions="2" time="0.003843"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System30Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System30Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008480">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System30Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System30Test.php" line="12" assertions="2" time="0.004553"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System30Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System30Test.php" line="22" assertions="2" time="0.003927"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System31Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System31Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008769">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System31Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System31Test.php" line="12" assertions="2" time="0.004680"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System31Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System31Test.php" line="22" assertions="2" time="0.004089"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System32Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System32Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.012248">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System32Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System32Test.php" line="12" assertions="6" time="0.008633"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System32Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System32Test.php" line="22" assertions="2" time="0.003615"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System33Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System33Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007825">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System33Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System33Test.php" line="12" assertions="2" time="0.004155"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System33Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System33Test.php" line="22" assertions="2" time="0.003670"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System34Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System34Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008224">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System34Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System34Test.php" line="12" assertions="2" time="0.004315"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System34Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System34Test.php" line="22" assertions="2" time="0.003909"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System35Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System35Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.014066">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System35Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System35Test.php" line="12" assertions="6" time="0.009838"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System35Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System35Test.php" line="22" assertions="2" time="0.004228"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System36Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System36Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007233">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System36Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System36Test.php" line="12" assertions="2" time="0.003889"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System36Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System36Test.php" line="22" assertions="2" time="0.003344"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System37Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System37Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007538">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System37Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System37Test.php" line="12" assertions="2" time="0.004098"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System37Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System37Test.php" line="22" assertions="2" time="0.003440"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System38Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System38Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007889">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System38Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System38Test.php" line="12" assertions="2" time="0.004228"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System38Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System38Test.php" line="22" assertions="2" time="0.003661"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System39Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System39Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008176">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System39Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System39Test.php" line="12" assertions="2" time="0.004378"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System39Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System39Test.php" line="22" assertions="2" time="0.003798"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System40Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System40Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008800">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System40Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System40Test.php" line="12" assertions="2" time="0.004708"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System40Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System40Test.php" line="22" assertions="2" time="0.004092"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System41Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System41Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="8" failures="0" errors="0" time="0.016782">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System41Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System41Test.php" line="12" assertions="6" time="0.012039"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System41Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System41Test.php" line="22" assertions="2" time="0.004743"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008766">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" line="12" assertions="2" time="0.004567"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System42Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System42Test.php" line="22" assertions="2" time="0.004199"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System43Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System43Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008870">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System43Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System43Test.php" line="12" assertions="2" time="0.004744"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System43Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System43Test.php" line="22" assertions="2" time="0.004126"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System44Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System44Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007776">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System44Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System44Test.php" line="12" assertions="2" time="0.004230"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System44Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System44Test.php" line="22" assertions="2" time="0.003546"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System45Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System45Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="6" failures="0" errors="0" time="0.014530">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System45Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System45Test.php" line="12" assertions="4" time="0.009369"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System45Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System45Test.php" line="22" assertions="2" time="0.005161"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System46Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System46Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="5" failures="0" errors="0" time="0.008633">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System46Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System46Test.php" line="12" assertions="3" time="0.005148"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System46Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System46Test.php" line="22" assertions="2" time="0.003485"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System47Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System47Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.007884">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System47Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System47Test.php" line="12" assertions="2" time="0.004329"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System47Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System47Test.php" line="22" assertions="2" time="0.003555"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System48Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System48Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008120">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System48Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System48Test.php" line="12" assertions="2" time="0.004381"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System48Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System48Test.php" line="22" assertions="2" time="0.003739"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System49Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System49Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="5" failures="0" errors="0" time="0.018607">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System49Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System49Test.php" line="12" assertions="3" time="0.010275"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System49Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System49Test.php" line="22" assertions="2" time="0.008332"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System50Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System50Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.009165">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System50Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System50Test.php" line="12" assertions="2" time="0.004454"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System50Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System50Test.php" line="22" assertions="2" time="0.004711"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System51Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System51Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="7" failures="0" errors="0" time="0.023875">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System51Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System51Test.php" line="12" assertions="5" time="0.015977"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System51Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System51Test.php" line="22" assertions="2" time="0.007898"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System54Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System54Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008408">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System54Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System54Test.php" line="12" assertions="2" time="0.004514"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System54Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System54Test.php" line="22" assertions="2" time="0.003894"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System55Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System55Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.008967">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System55Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System55Test.php" line="12" assertions="2" time="0.004776"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System55Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System55Test.php" line="22" assertions="2" time="0.004191"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System56Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System56Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.009112">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System56Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System56Test.php" line="12" assertions="2" time="0.004876"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System56Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System56Test.php" line="22" assertions="2" time="0.004236"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System57Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System57Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="13" failures="0" errors="0" time="0.033987">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System57Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System57Test.php" line="12" assertions="11" time="0.024800"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System57Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System57Test.php" line="25" assertions="2" time="0.009187"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System58Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System58Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="6" failures="0" errors="0" time="0.010529">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System58Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System58Test.php" line="12" assertions="4" time="0.006823"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System58Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System58Test.php" line="22" assertions="2" time="0.003706"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System59Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System59Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.009432">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System59Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System59Test.php" line="12" assertions="2" time="0.004279"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System59Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System59Test.php" line="22" assertions="2" time="0.005153"/>
+    </testsuite>
+    <testsuite name="Bav\Validator\De\System60Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System60Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="4" failures="0" errors="0" time="0.010071">
+      <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\System60Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System60Test.php" line="12" assertions="2" time="0.005490"/>
+      <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\System60Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/System60Test.php" line="22" assertions="2" time="0.004581"/>
+    </testsuite>
   </testsuite>
 </testsuites>

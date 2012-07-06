@@ -9,19 +9,28 @@ abstract class IterationWeighted extends Iteration
     
     protected $modulo = 10;
     
-    protected function setWeights($weights)
+    public function setWeights($weights)
     {
         $this->weights = $weights;
     }
     
-    protected function setModulo($modulo)
+    public function setModulo($modulo)
     {
         $this->modulo = $modulo;
     }
     
-    protected function getWeight() {
+    public function getWeight() {
         return $this->weights[$this->i % count($this->weights)];
     }
     
+    public function getWeights()
+    {
+        return $this->weights;
+    }
+
+    public function getModulo()
+    {
+        return $this->modulo;
+    }
     
 }
