@@ -14,6 +14,12 @@ abstract class Iteration extends Base
     
     abstract protected function iterationStep();
     
+    protected function init($account)
+    {
+        parent::init($account);
+        $this->accumulator  = 0;
+    }
+    
     protected function validate()
     {
         $start  = Math::getNormalizedPosition($this->account, $this->start);

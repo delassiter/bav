@@ -35,7 +35,7 @@ class System51 extends \Bav\Validator\Chain
     /**
      * @return array
      */
-    static public function getExceptionValidators()
+    public static function getExceptionValidators()
     {
         $exceptionValidators = array();
         $exceptionValidators[] = new System51x();
