@@ -4,9 +4,34 @@ namespace Bav\Validator\De;
 
 use Bav\Validator\Math;
 
-class System05 extends System01
+class System84 extends \Bav\Validator\Chain
 {
     
-    protected $weights = array(7, 3, 1);
+    protected $modeC;
+    
+    public function __construct()
+    {
 
+        $this->defaultValidators[] = new System33();
+        $this->defaultValidators[0]->setWeights(array(2, 3, 4, 5, 6));
+        $this->defaultValidators[0]->setEnd(4);
+        
+        $this->defaultValidators[] = new System84b();
+        
+        $this->exceptionValidators = System51::getExceptionValidators();
+    }
+    
+    protected function init($account)
+    {
+        parent::init($account);
+        
+        $this->validators = substr($this->account, 2, 2) == 99
+                          ? $this->exceptionValidators
+                          : $this->defaultValidators;
+    }
+    
+    protected function continueValidation(\Bav\Validator\Base $validator)
+    {
+        return $validator !== $this->modeC || $this->account{9} < 7;
+    }
 }

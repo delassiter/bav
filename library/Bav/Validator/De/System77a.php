@@ -4,22 +4,19 @@ namespace Bav\Validator\De;
 
 use Bav\Validator\Math;
 
-class System00 extends \Bav\Validator\IterationWeighted
+class System77a extends \Bav\Validator\IterationWeighted
 {
     
-    protected $weights = array(2, 1);
-    protected $modulo = 10;
+    protected $start = -1;
+    protected $end = 5;
     
-    
-    protected function iterationStep()
-    {
-        $this->accumulator += Math::crossSum($this->number * $this->getWeight());
+    protected function iterationStep() {
+        $this->accumulator += $this->number * $this->getWeight();
     }
 
-    protected function getResult()
-    {
-        $result = $this->modulo - ($this->accumulator % $this->modulo);
-        $result = ($result == $this->modulo) ? 0 : $result;
-        return (string)$result === $this->getCheckNumber();
+
+    protected function getResult() {
+        $result = $this->accumulator % 11;
+        return $result === 0;
     }
 }

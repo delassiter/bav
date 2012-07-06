@@ -6,6 +6,8 @@ abstract class Chain extends Base
 {
     
     protected $validators = array();
+    protected $defaultValidators = array();
+    protected $exceptionValidators = array();
     
     protected function getResult()
     {

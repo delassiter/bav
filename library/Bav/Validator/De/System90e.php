@@ -4,9 +4,25 @@ namespace Bav\Validator\De;
 
 use Bav\Validator\Math;
 
-class System05 extends System01
+class System90e extends \Bav\Validator\IterationWeighted
 {
-    
-    protected $weights = array(7, 3, 1);
 
+    public function __construct()
+    {
+        $this->setWeights(array(2, 1));
+        $this->setEnd(4);
+    }
+    
+    protected function iterationStep()
+    {
+        $this->accumulator += $this->number * $this->getWeight();
+    }
+
+
+    protected function getResult()
+    {
+        $result = (10 - $this->accumulator % 10) % 10;
+        return (string)$result === $this->getCheckNumber();
+    }
+    
 }

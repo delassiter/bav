@@ -4,9 +4,12 @@ namespace Bav\Validator\De;
 
 use Bav\Validator\Math;
 
-class System03 extends System01
+class System78 extends System00
 {
     
-    protected $weights = array(2, 1);
+    public function isValid($account)
+    {
+        return strlen($account) !== 8 && parent::isValid($account);
+    }
 
 }
