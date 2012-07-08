@@ -23,6 +23,14 @@ class Math
         return $sum;
     }
     
+    public static function isBetween($account, $a, $b)
+    {
+        $account = (int) ltrim($account, '0');
+        
+        return $a < $b
+             ? $account >= $a && $account <= $b
+             : $account >= $b && $account <= $a;
+    }
     
     public static function getNormalizedPosition($account, $position)
     {
@@ -38,15 +46,5 @@ class Math
         return strlen($account) + $position;
     }
     
-    public function normalizeAccount($account, $size)
-    {
-        $account = (string) $account;
-        if (strlen($account) > $size) {
-            throw new Exception\OutOfBoundsException("Can't normalize {$account} to size {$size}.");
 
-        }
-        
-        return str_repeat('0', $size - strlen($account)) . $account;
-    }
-    
 }

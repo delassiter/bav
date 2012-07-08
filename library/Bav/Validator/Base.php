@@ -50,10 +50,21 @@ abstract class Base
     protected function init($account)
     {
         if ($this->doNormalization) {
-            $account = Math::normalizeAccount($account, $this->normalizedSize);
+            $account = $this->normalizeAccount($account, $this->normalizedSize);
         }
         
         $this->account = $account;
+    }
+    
+    protected function normalizeAccount($account, $size)
+    {
+        $account = (string) $account;
+        if (strlen($account) > $size) {
+            throw new Exception\OutOfBoundsException("Can't normalize {$account} to size {$size}.");
+
+        }
+        
+        return str_repeat('0', $size - strlen($account)) . $account;
     }
     
     abstract protected function getResult();
