@@ -11,20 +11,22 @@ class SystemC0Test extends \Bav\Test\SystemTestCase
 
     public function testWithValidAccountReturnsTrue()
     {
-        $validAccounts = explode(', ', '1197423162, 1000000406');
+        $bank = new \Bav\Bank('13051172', 'C0');
+        $validAccounts = explode(', ', '43001500, 48726458, 82335729, 734192657');
 
         foreach ($validAccounts as $account) {
-            $validator = new SystemC0($this->bank);
+            $validator = new SystemC0($bank);
             $this->assertTrue($validator->isValid($account));
         }
     }
 
     public function testWithInvalidAccountReturnsFalse()
     {
-        $validAccounts = array('864089000', '87096000');
+        $bank = new \Bav\Bank('13051172', 'C0');
+        $validAccounts = array('82335729', '132572975');
 
         foreach ($validAccounts as $account) {
-            $validator = new SystemC0($this->bank);
+            $validator = new SystemC0($bank);
             $this->assertFalse($validator->isValid($account));
         }
     }

@@ -4,36 +4,23 @@ namespace Bav\Validator\De;
 
 use Bav\Validator\Math;
 
-class SystemC0 extends \Bav\Validator\Base
+class SystemC0 extends \Bav\Validator\Chain
 {
 
-    protected $validator;
-    protected $mode1;
-    protected $mode2;
-    
+
     public function __construct(\Bav\Bank $bank)
     {
-        parent::__construct($bank);
-        $this->mode1 = new System09($bank);
+        $this->validators[] = new System52($bank);
+        $this->validators[0]->setWeights(array(2, 4, 8, 5, 10, 9, 7, 3, 6, 1, 2, 4));
         
-        $this->mode2 = new System06($bank);
-        $this->mode2->setWeights(array(2, 3, 4, 5, 6, 7));
+        $this->validators[] = new System20($bank);
+        $this->validators[1]->setWeights(array(2, 3, 4, 5, 6, 7, 8, 9, 3));
     }
     
-    protected function validate()
+    public function useValidator(\Bav\Validator\Base $validator)
     {
-        $this->validator = array_search($this->account{7}, array(1, 2, 3, 6)) !== false
-                         ? $this->mode1
-                         : $this->mode2;
-    }
-    /**
-     * @return bool
-     */
-    protected function getResult()
-    {
-        return strlen(ltrim($this->account, '0')) === 10
-            && $this->account{0} !== '8'
-            && $this->validator->isValid($this->account);
+        return $validator !== $this->validators[0]
+            || preg_match('~^00[^0]~', $this->account);
     }
     
 }

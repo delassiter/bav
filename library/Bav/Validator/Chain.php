@@ -2,12 +2,17 @@
 
 namespace Bav\Validator;
 
-abstract class Chain extends Base
+class Chain extends Base
 {
     
     protected $validators = array();
     protected $defaultValidators = array();
     protected $exceptionValidators = array();
+    
+    public function addValidator(Base $validator)
+    {
+        $this->validators[] = $validator;
+    }
     
     protected function getResult()
     {

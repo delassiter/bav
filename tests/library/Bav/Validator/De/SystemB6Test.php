@@ -9,9 +9,15 @@ namespace Bav\Validator\De;
 class SystemB6Test extends \Bav\Test\SystemTestCase
 {
 
+    public function setUp()
+    {
+        $this->bank = new \Bav\Bank('80053782', 'B6');
+    }
+    
     public function testWithValidAccountReturnsTrue()
     {
-        $validAccounts = array('17', '800048548', '150178033');
+
+        $validAccounts = array('9110000000', '269876545', '487310018');
 
         foreach ($validAccounts as $account) {
             $validator = new SystemB6($this->bank);
@@ -21,10 +27,11 @@ class SystemB6Test extends \Bav\Test\SystemTestCase
 
     public function testWithInvalidAccountReturnsFalse()
     {
-        $validAccounts = array('9110000000', '0269876545');
+        $bank = new \Bav\Bank('80053772', 'B6');
+        $validAccounts = array('9111000000', '487310018');
 
         foreach ($validAccounts as $account) {
-            $validator = new SystemB6($this->bank);
+            $validator = new SystemB6($bank);
             $this->assertFalse($validator->isValid($account));
         }
     }
