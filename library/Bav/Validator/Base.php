@@ -13,6 +13,13 @@ abstract class Base
     
     protected $doNormalization = true;
     
+    protected $bank;
+    
+    public function __construct(\Bav\Bank $bank)
+    {
+        $this->bank = $bank;
+    }
+    
     public function getChecknumberPosition()
     {
         return $this->checknumberPosition;
@@ -65,6 +72,11 @@ abstract class Base
         }
         
         return str_repeat('0', $size - strlen($account)) . $account;
+    }
+    
+    public function setNormalizedSize($size)
+    {
+        $this->normalizedSize = $size;
     }
     
     abstract protected function getResult();

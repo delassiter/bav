@@ -9,16 +9,16 @@ class System84 extends \Bav\Validator\Chain
     
     protected $modeC;
     
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-
-        $this->defaultValidators[] = new System33();
+        parent::__construct($bank);
+        $this->defaultValidators[] = new System33($bank);
         $this->defaultValidators[0]->setWeights(array(2, 3, 4, 5, 6));
         $this->defaultValidators[0]->setEnd(4);
         
-        $this->defaultValidators[] = new System84b();
+        $this->defaultValidators[] = new System84b($bank);
         
-        $this->exceptionValidators = System51::getExceptionValidators();
+        $this->exceptionValidators = System51::getExceptionValidators($bank);
     }
     
     protected function init($account)

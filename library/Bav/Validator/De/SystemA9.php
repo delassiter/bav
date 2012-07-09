@@ -7,8 +7,9 @@ use Bav\Validator\Math;
 class SystemA9 extends \Bav\Validator\Chain
 {
 
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
+        parent::__construct($bank);
         $this->validators[] = new System01($bank);
         $this->validators[0]->setWeights(array(3, 7, 1));
         

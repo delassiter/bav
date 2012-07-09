@@ -11,12 +11,13 @@ class System51 extends \Bav\Validator\Chain
     protected $exceptionValidators = array();
     protected $validatorC;
     
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-        $this->validatorC = new System33();
+        parent::__construct($bank);
+        $this->validatorC = new System33($bank);
         
-        $this->defaultValidators[] = new System06();
-        $this->defaultValidators[] = new System33();
+        $this->defaultValidators[] = new System06($bank);
+        $this->defaultValidators[] = new System33($bank);
         $this->defaultValidators[] = $this->validatorC;
         
         $this->defaultValidators[0]->setWeights(array(2, 3, 4, 5, 6, 7));
@@ -29,17 +30,17 @@ class System51 extends \Bav\Validator\Chain
         $this->defaultValidators[2]->setEnd(4);
         $this->defaultValidators[2]->setModulo(7);
         
-        $this->exceptionValidators = self::getExceptionValidators();
+        $this->exceptionValidators = self::getExceptionValidators($bank);
     }
     
     /**
      * @return array
      */
-    public static function getExceptionValidators()
+    public static function getExceptionValidators($bank)
     {
         $exceptionValidators = array();
-        $exceptionValidators[] = new System51x();
-        $exceptionValidators[] = new System51x();
+        $exceptionValidators[] = new System51x($bank);
+        $exceptionValidators[] = new System51x($bank);
             
         $exceptionValidators[1]->setWeights(array(2, 3, 4, 5, 6, 7, 8, 9, 10));
         $exceptionValidators[1]->setEnd(0);

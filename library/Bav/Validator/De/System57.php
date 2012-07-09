@@ -13,17 +13,17 @@ class System57 extends \Bav\Validator\Base
     protected $mode1;
     protected $mode2;
     
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
+        parent::__construct($bank);
+        $this->validator09 = new System09($bank);
         
-        $this->validator09 = new System09();
-        
-        $this->mode1 = new System00();
+        $this->mode1 = new System00($bank);
         $this->mode1->setWeights(array(1, 2));
         $this->mode1->setStart(0);
         $this->mode1->setEnd(-2);
         
-        $this->mode2 = new System00();
+        $this->mode2 = new System00($bank);
         $this->mode2->setWeights(array(1, 2, 0, 1, 2, 1, 2, 1, 2, 1));
         $this->mode2->setChecknumberPosition(2);
         $this->mode2->setStart(0);

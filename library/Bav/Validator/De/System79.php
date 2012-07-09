@@ -11,10 +11,11 @@ class System79 extends \Bav\Validator\Base
     protected $mode1;
     protected $mode2;
     
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-        $this->mode1 = new System00();
-        $this->mode2 = new System00();
+        parent::__construct($bank);
+        $this->mode1 = new System00($bank);
+        $this->mode2 = new System00($bank);
         $this->mode2->setStart(-3);
         $this->mode2->setChecknumberPosition(-2);
     }

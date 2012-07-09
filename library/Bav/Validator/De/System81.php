@@ -6,16 +6,17 @@ use Bav\Validator\Math;
 
 class System81 extends \Bav\Validator\Chain
 {
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-
+        parent::__construct($bank);
         $this->defaultValidators[] = new System32($bank);
         $this->defaultValidators[0]->setWeights(array(2, 3, 4, 5, 6, 7));
         
-        $this->exceptionValidators = System51::getExceptionValidators();
+        $this->exceptionValidators = System51::getExceptionValidators($bank);
     }
     
-    protected function init($account) {
+    protected function init($account)
+    {
         parent::init($account);
         
         $this->validators = $this->account{2} == 9

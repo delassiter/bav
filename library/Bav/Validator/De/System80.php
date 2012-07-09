@@ -6,17 +6,17 @@ use Bav\Validator\Math;
 
 class System80 extends \Bav\Validator\Chain
 {
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-
-        $this->defaultValidators[] = new System00();
+        parent::__construct($bank);
+        $this->defaultValidators[] = new System00($bank);
         $this->defaultValidators[0]->setEnd(4);
         
-        $this->defaultValidators[] = new System00();
+        $this->defaultValidators[] = new System00($bank);
         $this->defaultValidators[1]->setEnd(4);
         $this->defaultValidators[1]->setModulo(7);
         
-        $this->exceptionValidators = System51::getExceptionValidators();
+        $this->exceptionValidators = System51::getExceptionValidators($bank);
     }
     
     protected function init($account)

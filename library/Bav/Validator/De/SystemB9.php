@@ -11,8 +11,9 @@ class SystemB9 extends \Bav\Validator\Base
     protected $mode1;
     protected $mode2;
     
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
+        parent::__construct($bank);
         $this->mode1 = new SystemB9a($bank);
         $this->mode2 = new SystemB9b($bank);
     }

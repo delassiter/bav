@@ -9,14 +9,15 @@ class System68 extends \Bav\Validator\Chain
 
     protected $validator10;
     
-    public function __construct() {
-        
-        $this->validator10  = new System00();
+    public function __construct(\Bav\Bank $bank)
+    {
+        parent::__construct($bank);
+        $this->validator10  = new System00($bank);
         $this->validator10->setEnd(3);
         
-        $this->validators[] = new System00();
+        $this->validators[] = new System00($bank);
         
-        $this->validators[] = new System00();
+        $this->validators[] = new System00($bank);
         $this->validators[1]->setWeights(array(2, 1, 2, 1, 2, 0, 0, 1));
     }
     

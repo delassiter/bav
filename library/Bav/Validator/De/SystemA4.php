@@ -7,20 +7,20 @@ use Bav\Validator\Math;
 class SystemA4 extends \Bav\Validator\Chain
 {
 
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-
-        $this->validators[] = new System06();
+        parent::__construct($bank);
+        $this->validators[] = new System06($bank);
         $this->validators[0]->setWeights(array(2, 3, 4, 5, 6, 7, 0, 0, 0));
         $this->validators[0]->setEnd(3);
         
-        $this->validators[] = new SystemA4b();
+        $this->validators[] = new SystemA4b($bank);
         
-        $this->validators[] = new System06();
+        $this->validators[] = new System06($bank);
         $this->validators[2]->setWeights(array(2, 3, 4, 5, 6, 0, 0, 0, 0));
         $this->validators[2]->setEnd(4);
         
-        $this->validators[] = new System93();
+        $this->validators[] = new System93($bank);
     }
     
     

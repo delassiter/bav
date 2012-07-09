@@ -11,10 +11,10 @@ class SystemB5 extends \Bav\Validator\Chain
     protected $mode1;
     protected $mode2;
     
-    public function __construct()
+    public function __construct(\Bav\Bank $bank)
     {
-        
-        $this->validators[] = new System01();
+        parent::__construct($bank);
+        $this->validators[] = new System01($bank);
         $this->validators[0]->setWeights(array(7, 3, 1));
         
         $this->validators[] = new System00($bank);
