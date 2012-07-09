@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Bav\Validator\De\SystemD9Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/SystemD9Test.php" namespace="Bav\Validator\De" fullPackage="Bav.Validator.De" tests="2" assertions="6" failures="0" errors="0" time="0.028791">
-    <testcase name="testWithValidAccountReturnsTrue" class="Bav\Validator\De\SystemD9Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/SystemD9Test.php" line="12" assertions="4" time="0.019136"/>
-    <testcase name="testWithInvalidAccountReturnsFalse" class="Bav\Validator\De\SystemD9Test" file="/home/dl/Projects/bav/tests/library/Bav/Validator/De/SystemD9Test.php" line="22" assertions="2" time="0.009655"/>
+  <testsuite name="Bav\BavTest" file="/home/dl/Projects/bav/tests/library/Bav/BavTest.php" namespace="Bav" fullPackage="Bav" tests="3" assertions="5" failures="0" errors="0" time="0.077796">
+    <testcase name="testGetBackendForUnknownCountryThrowsException" class="Bav\BavTest" file="/home/dl/Projects/bav/tests/library/Bav/BavTest.php" line="40" assertions="1" time="0.003554"/>
+    <testcase name="testGetBank" class="Bav\BavTest" file="/home/dl/Projects/bav/tests/library/Bav/BavTest.php" line="46" assertions="2" time="0.029717"/>
+    <testcase name="testBankExists" class="Bav\BavTest" file="/home/dl/Projects/bav/tests/library/Bav/BavTest.php" line="58" assertions="2" time="0.044525"/>
   </testsuite>
 </testsuites>

@@ -1,16 +1,7 @@
 <?php
 
 /**
- * A bank can validate a bank account (BAV_Bank->isValid(String $account)) and
- * has a bank ID, a main agency (BAV_Bank->getMainAgency()) and optionally some
- * more agencies (BAV_Bank->getAgencies()). Note that the main agency is not
- * included in the array BAV_Bank->getAgencies() (which could even be empty).
- *
- * You should not create BAV_Bank objects directly. Use a BAV_DataBackend object
- * to get a BAV_Bank object.
- *
- *
- * Copyright (C) 2006  Markus Malkusch <markus@malkusch.de>
+ * Copyright (C) 2012  Dennis Lassiter <dennis@lassiter.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,10 +18,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  *
- * @package classes
- * @subpackage bank
- * @author Markus Malkusch <markus@malkusch.de>
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author Dennis Lassiter <dennis@lassiter.de>
+ * @copyright Copyright (C) 2012 Dennis Lassiter
  */
 
 namespace Bav;
@@ -83,7 +72,7 @@ class Bank
     /**
      * @return string
      */
-    public function getBankID()
+    public function getBankId()
     {
         return (string) $this->bankId;
     }
@@ -92,7 +81,7 @@ class Bank
      * Every bank has one main agency. This agency is not included in getAgencies().
      *
      * @throws BAV_DataBackendException
-     * @return BAV_Agency
+     * @return Bank\Agency
      */
     public function getMainAgency()
     {
@@ -132,7 +121,7 @@ class Bank
     public function getValidator()
     {
         if (is_null($this->validator)) {
-            $this->validator = BAV_Validator::getInstance($this);
+            $this->validator = Validator::getInstance($this->validationType, $this);
         }
         return $this->validator;
     }

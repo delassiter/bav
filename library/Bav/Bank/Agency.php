@@ -1,12 +1,7 @@
 <?php
 
 /**
- * The agency belongs to one bank. Every bank has one main agency and may have
- * some more agencies in different cities. Don't create this object directly.
- * Use BAV_Bank->getMainAgency() or BAV_Bank->getAgencies().
- * 
- *
- * Copyright (C) 2006  Markus Malkusch <markus@malkusch.de>
+ * Copyright (C) 2012  Dennis Lassiter <dennis@lassiter.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,10 +18,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  *
- * @package classes
- * @subpackage bank
- * @author Markus Malkusch <markus@malkusch.de>
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @package Bank
+ * @author Dennis Lassiter <dennis@lassiter.de>
+ * @copyright Copyright (C) 2012 Dennis Lassiter
  */
 
 namespace Bav\Bank;
@@ -40,7 +34,7 @@ class Agency
     protected $id = 0;
 
     /**
-     * @var BAV_Bank
+     * @var \Bav\Bank
      */
     protected $bank;
 
@@ -109,7 +103,7 @@ class Agency
     }
 
     /**
-     * @return BAV_Bank
+     * @return \Bav\Bank
      */
     public function getBank()
     {
@@ -119,7 +113,7 @@ class Agency
     /**
      * @return int
      */
-    public function getID()
+    public function getId()
     {
         return $this->id;
     }
@@ -173,25 +167,25 @@ class Agency
     }
 
     /**
-     * @throws BAV_AgencyException_UndefinedAttribute
+     * @throws \Bank\Exception\UndefinedAttributeException
      * @return string
      */
     public function getPan()
     {
         if (!$this->hasPAN()) {
-            throw new BAV_AgencyException_UndefinedAttribute($this, 'pan');
+            throw new \Bank\Exception\UndefinedAttributeException($this, 'pan');
         }
         return $this->pan;
     }
 
     /**
-     * @throws BAV_AgencyException_UndefinedAttribute
+     * @throws \Bank\Exception\UndefinedAttributeException
      * @return string
      */
     public function getBic()
     {
         if (!$this->hasBIC()) {
-            throw new BAV_AgencyException_UndefinedAttribute($this, 'bic');
+            throw new \Bank\Exception\UndefinedAttributeException($this, 'bic');
         }
         return $this->bic;
     }
