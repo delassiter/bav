@@ -18,7 +18,7 @@ class SystemE1 extends System00
         $result = $this->accumulator % $this->modulo;
         if ($result == 10) {
             return false;
-        }
+        }   
         return (string) $result === $this->getCheckNumber();
     }
 }
