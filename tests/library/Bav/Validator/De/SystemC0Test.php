@@ -8,11 +8,10 @@ namespace Bav\Validator\De;
  */
 class SystemC0Test extends \Bav\Test\SystemTestCase
 {
-
     public function testWithValidAccountReturnsTrue()
     {
         $bank = new \Bav\Bank('13051172', 'C0');
-        $validAccounts = explode(', ', '43001500, 48726458, 82335729, 734192657');
+        $validAccounts = array('43001500', '48726458', '0082335729', '0734192657', '6932875274');
 
         foreach ($validAccounts as $account) {
             $validator = new SystemC0($bank);
@@ -23,12 +22,11 @@ class SystemC0Test extends \Bav\Test\SystemTestCase
     public function testWithInvalidAccountReturnsFalse()
     {
         $bank = new \Bav\Bank('13051172', 'C0');
-        $validAccounts = array('82335729', '132572975');
+        $invalidAccounts = array('29837521', '0132572975', '3038752371');
 
-        foreach ($validAccounts as $account) {
+        foreach ($invalidAccounts as $account) {
             $validator = new SystemC0($bank);
             $this->assertFalse($validator->isValid($account));
         }
     }
-
 }
