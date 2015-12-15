@@ -13,7 +13,7 @@
  * @link http://php-autoloader.malkusch.de/en/
  */
 
-namespace malkusch\autoloader;
+namespace malkusch\bav\autoloader;
 
 require_once __DIR__ . '/InstantAutoloader.php';
 
