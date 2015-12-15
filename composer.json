@@ -1,5 +1,5 @@
 {
-    "name": "malkusch/bav",
+    "name": "bmdevel/bav",
     "type": "library",
     "description": "BAV provides validation for German Bank Accounts (Konto)",
     "keywords": ["bank", "account", "bankaccount", "validation", "check", "konto"],
