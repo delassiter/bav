@@ -11,7 +11,6 @@ namespace malkusch\bav;
  */
 interface URIPicker
 {
-
     /**
      * Returns true if this implementation is available on this platform.
      *
@@ -22,8 +21,10 @@ interface URIPicker
     /**
      * Returns the download URI from the Bundesbank html page.
      *
-     * @throws URIPickerException
+     * @param string $html
+     * @param \DateTime $currentDate
+     *
      * @return string
      */
-    public function pickURI($html);
+    public function pickURI($html, \DateTime $currentDate);
 }

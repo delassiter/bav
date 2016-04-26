@@ -21,47 +21,23 @@ class URIPickerTest extends \PHPUnit_Framework_TestCase
     public function provideURIPicker()
     {
         return array(
-            array(new RegExpURIPicker()),
             array(new DOMURIPicker()),
-            array(new FallbackURIPicker()),
         );
     }
 
     /**
-     * All picker return the same result.
-     *
-     * @medium
-     */
-    public function testSameResults()
-    {
-        $lastResult = null;
-        $html = file_get_contents(FileDataBackend::DOWNLOAD_URI);
-        foreach ($this->provideURIPicker() as $picker) {
-            $picker = $picker[0];
-            $result = $picker->pickURI($html);
-            if (is_null($lastResult)) {
-                $lastResult = $result;
-                continue;
-
-            }
-
-            $this->assertEquals($lastResult, $result);
-        }
-    }
-
-    /**
      * Tests pickURI()
-     *
-     * @dataProvider provideURIPicker
      */
-    public function testPickURI(URIPicker $picker)
+    public function testPickURI()
     {
+        $picker = new DOMURIPicker();
+
         $html = file_get_contents(__DIR__ . "/../data/bankleitzahlen_download.html");
-        $uri = $picker->pickURI($html);
+        $uri = $picker->pickURI($html, new \DateTime('2016-04-26 00:00:00'));
 
         $this->assertEquals(
             // @codingStandardsIgnoreStart
-            "/Redaktion/DE/Downloads/Aufgaben/Unbarer_Zahlungsverkehr/Bankleitzahlen/2014_09_07/blz_2014_06_09_txt.txt?__blob=publicationFile",
+            "/Redaktion/DE/Downloads/Aufgaben/Unbarer_Zahlungsverkehr/Bankleitzahlen/2016_06_05/blz_2016_03_07_txt.txt?__blob=publicationFile",
             // @codingStandardsIgnoreEnd
             $uri
         );
@@ -70,22 +46,23 @@ class URIPickerTest extends \PHPUnit_Framework_TestCase
     /**
      * Tests pickURI()
      *
-     * @dataProvider provideURIPicker
      * @expectedException malkusch\bav\URIPickerException
      */
-    public function testFailPickURI(URIPicker $picker)
+    public function testFailPickURI()
     {
+        $picker = new DOMURIPicker();
+
         $html = "XXX";
-        $uri = $picker->pickURI($html);
+        $picker->pickURI($html, new \DateTime());
     }
 
     /**
      * All pickers are available on this platform.
-     *
-     * @dataProvider provideURIPicker
      */
-    public function testIsAvailable(URIPicker $picker)
+    public function testIsAvailable()
     {
+        $picker = new DOMURIPicker();
+
         $this->assertTrue($picker->isAvailable());
     }
 }
