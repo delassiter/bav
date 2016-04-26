@@ -155,14 +155,15 @@ class FileDataBackend extends DataBackend
      * @throws DataBackendIOException
      * @throws FileException
      * @throws DownloaderException
+     * @throws URIPickerException
      */
     public function update()
     {
         $downloader = new Downloader();
         $content = $downloader->downloadContent(self::DOWNLOAD_URI);
 
-        $uriPicker = new FallbackURIPicker();
-        $path = $uriPicker->pickURI($content);
+        $uriPicker = new DOMURIPicker();
+        $path = $uriPicker->pickURI($content, new \DateTime());
 
         if (strlen($path) > 0 && $path{0} != "/") {
             $path = sprintf("/%s/%s", dirname(self::DOWNLOAD_URI), $path);

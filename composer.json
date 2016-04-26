@@ -28,7 +28,7 @@
         "doctrine/orm": "Support for Doctrine ORM data backend"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=4",
+        "phpunit/phpunit": "^4.8",
         "doctrine/orm": "^2"
     },
     "archive": {
