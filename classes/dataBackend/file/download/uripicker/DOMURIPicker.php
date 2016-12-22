@@ -41,7 +41,7 @@ class DOMURIPicker implements URIPicker
         $xpath = new \DOMXpath($doc);
 
         $result = $xpath->query(
-            "(//a[contains(text(), 'Bankleitzahlendateien') and contains(@href, '.txt')]/@href)"
+            "(//a[contains(*/text(), 'Bankleitzahlendateien') and contains(@href, '.txt')]/@href)"
         );
 
         $currentDateInt = (int) $currentDate->format('Ymd');
