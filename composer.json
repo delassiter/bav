@@ -1,0 +1,41 @@
+{
+    "name": "bmdevel/bav",
+    "type": "library",
+    "description": "BAV provides validation for German Bank Accounts (Konto)",
+    "keywords": ["bank", "account", "bankaccount", "validation", "check", "konto"],
+    "homepage": "http://bav.malkusch.de/",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Markus Malkusch",
+            "email": "markus@malkusch.de",
+            "homepage": "http://markus.malkusch.de",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": ["autoloader/autoloader.php"]
+    },
+    "require": {
+        "php": ">=5.4",
+        "bmdevel/php-index": "~0.2"
+    },
+    "suggest": {
+        "ext-PDO": "Allows storing bank information in a database",
+        "ext-mbstring": "Enables UTF-8 support",
+        "ext-dom": "Enables picking the download URI by xpath",
+        "lib-curl": "Enables API for downloading the bank file",
+        "doctrine/orm": "Support for Doctrine ORM data backend"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "doctrine/orm": "^2"
+    },
+    "archive": {
+        "exclude": ["/tests"]
+    },
+    "bin": [
+        "bin/bav-update.php",
+        "bin/bav-install.php"
+    ]
+}

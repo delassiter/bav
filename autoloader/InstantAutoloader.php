@@ -30,14 +30,7 @@
  * @link      http://php-autoloader.malkusch.de/en/
  */
 
-/**
- * There might be several InstantAutoloaders deployed in a project.
- * One is enough.
- */
-if (class_exists("InstantAutoloader")) {
-    return;
-
-}
+namespace malkusch\bav\autoloader;
 
 /**
  * An instant autoloader for shipping with project builds
@@ -62,22 +55,22 @@ if (class_exists("InstantAutoloader")) {
  */
 class InstantAutoloader
 {
-    
+
     const
-    /**
-     * The name of the class constructor is classConstructor().
-     */
-    CLASS_CONSTRUCTOR = 'classConstructor';
-    
+        /**
+         * The name of the class constructor is classConstructor().
+         */
+        CLASS_CONSTRUCTOR = 'classConstructor';
+
     private
-    /**
-     * @var string
-     */
-    $_basePath = "",
-    /**
-     * @var array
-     */
-    $_index = array();
+        /**
+         * @var string
+         */
+        $_basePath = "",
+        /**
+         * @var array
+         */
+        $_index = array();
 
     /**
      * Loads the generated index array
@@ -99,16 +92,16 @@ class InstantAutoloader
     public function register()
     {
         // spl_autoload_register() disables __autoload(). This might be unwanted.
-        if (function_exists("__autoload")) {
-            spl_autoload_register("__autoload");
+        if (\function_exists("__autoload")) {
+            \spl_autoload_register("__autoload");
 
         }
-        spl_autoload_register(array($this, "__autoload"));
+        \spl_autoload_register(array($this, "__autoload"));
     }
 
     /**
      * Includes all class paths
-     * 
+     *
      * You can use this as an alternative to the autoload mechanism. This
      * simply includes all classes without any autoloader.
      *
@@ -144,23 +137,33 @@ class InstantAutoloader
     public function __autoload($class)
     {
         $this->_normalizeClass($class);
-        
+
         /*
          * spl_autoload_call() runs the complete stack,
          * even though the class is already defined by
          * a previously registered method.
          */
-        if (class_exists($class, false) || interface_exists($class, false)) {
+        if (
+            \class_exists($class, false)
+            || \interface_exists($class, false)
+        ) {
             return;
 
         }
-        if (! array_key_exists($class, $this->_index)) {
+        if (
+            \version_compare(PHP_VERSION, "5.4", '>=')
+            && \trait_exists($class, false)
+        ) {
             return;
 
         }
-        
+        if (!\array_key_exists($class, $this->_index)) {
+            return;
+
+        }
+
         $this->_requirePath($this->_index[$class]);
-        
+
         $this->_callClassConstructor($class, self::CLASS_CONSTRUCTOR);
     }
 
@@ -173,7 +176,7 @@ class InstantAutoloader
      */
     private function _requirePath($path)
     {
-        if (! empty($this->_basePath)) {
+        if (!empty($this->_basePath)) {
             $path = $this->_basePath . DIRECTORY_SEPARATOR . $path;
 
         }
@@ -192,30 +195,35 @@ class InstantAutoloader
      */
     private function _normalizeClass(&$class)
     {
-        $class = strtolower($class);
+        $class = \strtolower($class);
     }
-    
+
     /**
      * Calls the class constructor
      *
      * If the class $class has the method public static $constructor, it
      * will be called.
      *
-     * @param String $class           A class which might have a class constructor
+     * @param String $class A class which might have a class constructor
      * @param String $constructorName the method name of the class constructor
      *
      * @return bool true if the class constructor was called
      */
-    private function _callClassConstructor($class, $constructorName)
+    public static function _callClassConstructor($class, $constructorName)
     {
-        $reflectionClass = new ReflectionClass($class);
-        if (! $reflectionClass->hasMethod($constructorName)) {
+        $reflectionClass = new \ReflectionClass($class);
+        if (!$reflectionClass->hasMethod($constructorName)) {
             return false;
 
         }
 
         $constructor = $reflectionClass->getMethod($constructorName);
-        if (! $constructor->isStatic()) {
+        if (!$constructor->isStatic()) {
+            return false;
+
+        }
+
+        if (\version_compare(PHP_VERSION, "5.4", '>=') && $reflectionClass->isTrait()) {
             return false;
 
         }
