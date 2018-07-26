@@ -195,4 +195,4 @@ Björn Wilmsmann. Responsable for this project is Markus Malkusch <markus@malkus
 If you like BAV and feel generous donate a few Bitcoins here:
 [1335STSwu9hST4vcMRppEPgENMHD2r1REK](bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK)
 
-[![Build Status](https://travis-ci.org/bav-php/bav.svg?branch=master)](https://travis-ci.org/bav-php/bav)
+[![Build Status](https://travis-ci.org/bmdevel/bav.svg?branch=master)](https://travis-ci.org/bmdevel/bav)
