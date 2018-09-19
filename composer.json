@@ -18,7 +18,7 @@
     },
     "require": {
         "php": ">=5.4",
-        "bmdevel/php-index": "~0.2"
+        "bmdevel/php-index": "~0.3"
     },
     "suggest": {
         "ext-PDO": "Allows storing bank information in a database",
