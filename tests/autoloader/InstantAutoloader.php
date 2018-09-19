@@ -102,7 +102,7 @@ if (! class_exists("malkusch\autoloader\InstantAutoloader", false)) {
                 \spl_autoload_register("__autoload");
 
             }
-            \spl_autoload_register(array($this, "__autoload"));
+            \spl_autoload_register(array($this, "autoload"));
         }
 
         /**
@@ -140,7 +140,7 @@ if (! class_exists("malkusch\autoloader\InstantAutoloader", false)) {
          *
          * @return void
          */
-        public function __autoload($class)
+        public function autoload($class)
         {
             $this->_normalizeClass($class);
 

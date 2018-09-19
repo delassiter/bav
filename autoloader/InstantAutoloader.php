@@ -94,9 +94,8 @@ class InstantAutoloader
         // spl_autoload_register() disables __autoload(). This might be unwanted.
         if (\function_exists("__autoload")) {
             \spl_autoload_register("__autoload");
-
         }
-        \spl_autoload_register(array($this, "__autoload"));
+        \spl_autoload_register([$this, "autoload"]);
     }
 
     /**
@@ -134,7 +133,7 @@ class InstantAutoloader
      *
      * @return void
      */
-    public function __autoload($class)
+    public function autoload($class)
     {
         $this->_normalizeClass($class);
 
