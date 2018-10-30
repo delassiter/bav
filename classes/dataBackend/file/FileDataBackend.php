@@ -18,7 +18,7 @@ class FileDataBackend extends DataBackend
 {
     
     // @codingStandardsIgnoreStart
-    const DOWNLOAD_URI = "https://www.bundesbank.de/Redaktion/DE/Standardartikel/Aufgaben/Unbarer_Zahlungsverkehr/bankleitzahlen_download.html";
+    const DOWNLOAD_URI = "https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download---bankleitzahlen-602592";
     // @codingStandardsIgnoreEnd
 
     /**
