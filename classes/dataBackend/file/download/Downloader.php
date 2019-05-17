@@ -30,6 +30,7 @@ class Downloader
 
         }
         curl_setopt($this->handle, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($this->handle, CURLOPT_FOLLOWLOCATION, true);
     }
 
     /**
