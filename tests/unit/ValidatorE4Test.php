@@ -8,7 +8,7 @@ require_once __DIR__ . '/../bootstrap.php';
  * Test for E4.
  *
  */
-class ValidatorE3Test extends \PHPUnit_Framework_TestCase
+class ValidatorE4Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
