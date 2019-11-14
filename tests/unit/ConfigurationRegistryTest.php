@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -11,13 +13,13 @@ require_once __DIR__ . "/../bootstrap.php";
  * @licends GPL
  * @see ConfigurationRegistry
  */
-class ConfigurationRegistryTest extends \PHPUnit_Framework_TestCase
+class ConfigurationRegistryTest extends TestCase
 {
     
     /**
      * Disable update hook
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         ConfigurationRegistry::getConfiguration()->setUpdatePlan(null);
     }

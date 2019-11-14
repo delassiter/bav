@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -11,7 +13,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @license WTFPL
  * @link https://github.com/bav-php/bav/pull/18
  */
-class Validator74_PR18_Test extends \PHPUnit_Framework_TestCase
+class Validator74_PR18_Test extends TestCase
 {
 
     /**

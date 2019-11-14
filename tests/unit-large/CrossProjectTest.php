@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -18,7 +20,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @license WTFPL
  * @large
  */
-class CrossProjectTest extends \PHPUnit_Framework_TestCase
+class CrossProjectTest extends TestCase
 {
 
     /**
@@ -67,7 +69,7 @@ class CrossProjectTest extends \PHPUnit_Framework_TestCase
      */
     private static $testAPIs = array();
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::$testAPIs = array(new BAVTestAPI());
 

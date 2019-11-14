@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -11,7 +13,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @see ContextValidation
  * @author Markus Malkusch <markus@malkusch.de>
  */
-class ContextValidationTest extends \PHPUnit_Framework_TestCase
+class ContextValidationTest extends TestCase
 {
 
     /**
@@ -19,7 +21,7 @@ class ContextValidationTest extends \PHPUnit_Framework_TestCase
      */
     private $validation;
     
-    protected function setUp()
+    protected function setUp(): void
     {
         $bav = new BAV();
         $this->validation = new ContextValidation($bav->getDataBackend());

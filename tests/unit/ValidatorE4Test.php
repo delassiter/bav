@@ -2,13 +2,15 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . '/../bootstrap.php';
 
 /**
  * Test for E4.
  *
  */
-class ValidatorE4Test extends \PHPUnit_Framework_TestCase
+class ValidatorE4Test extends TestCase
 {
 
     /**

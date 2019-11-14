@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -11,7 +13,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @license WTFPL
  * @see ValidatorFactory
  */
-class ValidatorFactoryTest extends \PHPUnit_Framework_TestCase
+class ValidatorFactoryTest extends TestCase
 {
     
     /**
@@ -19,7 +21,7 @@ class ValidatorFactoryTest extends \PHPUnit_Framework_TestCase
      */
     private $factory;
     
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->factory = new ValidatorFactory();
     }

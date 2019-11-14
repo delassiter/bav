@@ -2,12 +2,14 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
  * Test if the banklist.txt fits into the model.
  */
-class DataConstraintTest extends \PHPUnit_Framework_TestCase
+class DataConstraintTest extends TestCase
 {
 
     /**
@@ -15,7 +17,7 @@ class DataConstraintTest extends \PHPUnit_Framework_TestCase
      */
     private static $pdo;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
 
         self::$pdo = PDOFactory::makePDO();

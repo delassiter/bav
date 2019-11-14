@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -11,7 +13,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @author Markus Malkusch <markus@malkusch.de>
  * @see StatementContainer
  */
-class StatementContainerTest extends \PHPUnit_Framework_TestCase
+class StatementContainerTest extends TestCase
 {
     
     /**
@@ -19,7 +21,7 @@ class StatementContainerTest extends \PHPUnit_Framework_TestCase
      */
     private $statementContainer;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->statementContainer = new StatementContainer(PDOFactory::makePDO());
     }

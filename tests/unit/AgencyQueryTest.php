@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -10,7 +12,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @author Markus Malkusch <markus@malkusch.de>
  * @licends GPL
  */
-class AgencyQueryTest extends \PHPUnit_Framework_TestCase
+class AgencyQueryTest extends TestCase
 {
 
     /**

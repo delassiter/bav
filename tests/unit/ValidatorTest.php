@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -10,7 +12,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @author Markus Malkusch <markus@malkusch.de>
  * @license WTFPL
  */
-class ValidatorTest extends \PHPUnit_Framework_TestCase
+class ValidatorTest extends TestCase
 {
 
     /**
@@ -32,7 +34,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
      * @throws FileParserIOException
      * @throws FileParserNotExistsException
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (! empty(self::$dataBackend)) {
             return;
@@ -149,7 +151,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
      * 
      * @see Validator::isValid()
      * @dataProvider provideBanks
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedException \PHPUnit\Framework\Error\Warning
      */
     public function testWarningForIsValidWithInt(Bank $bank)
     {

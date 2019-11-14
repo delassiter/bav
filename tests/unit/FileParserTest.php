@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -12,7 +14,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @see FileParser
  */
-class FileParserTest extends \PHPUnit_Framework_TestCase
+class FileParserTest extends TestCase
 {
     
     /**

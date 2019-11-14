@@ -2,6 +2,8 @@
 
 namespace malkusch\bav;
 
+use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . "/../bootstrap.php";
 
 /**
@@ -11,7 +13,7 @@ require_once __DIR__ . "/../bootstrap.php";
  * @licends GPL
  * @see ConfigurationLocator
  */
-class ConfigurationLocatorTest extends \PHPUnit_Framework_TestCase
+class ConfigurationLocatorTest extends TestCase
 {
     
     /**
