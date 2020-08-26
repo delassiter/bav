@@ -9,9 +9,9 @@ require_once __DIR__ . "/../bootstrap.php";
 /**
  * Tests ConfigurationRegistryTest
  *
- * @author Markus Malkusch <markus@malkusch.de>
+ * @author  Markus Malkusch <markus@malkusch.de>
  * @licends GPL
- * @see ConfigurationRegistry
+ * @see     ConfigurationRegistry
  */
 class ConfigurationRegistryTest extends TestCase
 {

@@ -21,12 +21,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2006 Markus Malkusch
  */
 class ValidatorA8 extends ValidatorChain
 {
@@ -63,7 +62,7 @@ class ValidatorA8 extends ValidatorChain
     {
         parent::init($account);
 
-        $this->validators = $this->account{2} == 9
+        $this->validators = $this->account[2] == 9
                           ? $this->exceptionValidators
                           : $this->defaultValidators;
     }

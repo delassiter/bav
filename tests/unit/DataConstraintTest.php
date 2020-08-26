@@ -68,7 +68,7 @@ class DataConstraintTest extends TestCase
 
         while ($line = fgets($fp)) {
             $blz        = substr($line, 0, 8);
-            $isMain     = ($line{8} === '1') ? 1 : 0;
+            $isMain     = ($line[8] === '1') ? 1 : 0;
             $name       = trim(substr($line, 9, 58));
             $plz        = trim(substr($line, 67, 5));
             $city       = trim(substr($line, 72, 35));

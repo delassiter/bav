@@ -9,9 +9,9 @@ require_once __DIR__ . "/../bootstrap.php";
 /**
  * Tests ConfigurationLocator
  *
- * @author Markus Malkusch <markus@malkusch.de>
+ * @author  Markus Malkusch <markus@malkusch.de>
  * @licends GPL
- * @see ConfigurationLocator
+ * @see     ConfigurationLocator
  */
 class ConfigurationLocatorTest extends TestCase
 {
@@ -30,23 +30,25 @@ class ConfigurationLocatorTest extends TestCase
     /**
      * locate() should throw an exception
      * 
-     * @see ConfigurationLocator::locate();
+     * @see               ConfigurationLocator::locate();
      * @expectedException malkusch\bav\ConfigurationException
      */
     public function testlocateThrowsException()
     {
-        $locator = new ConfigurationLocator(array(
+        $locator = new ConfigurationLocator(
+            array(
             __DIR__ . "/../data/no_configuration.php"
-        ));
+            )
+        );
         $locator->locate();
     }
     
     /**
      * locate() should find absolute paths
      * 
-     * @param string[] $paths
+     * @param        string[] $paths
      * @dataProvider provideTestLocateFindsAbsolutePath
-     * @see ConfigurationLocator::locate();
+     * @see          ConfigurationLocator::locate();
      */
     public function testLocateFindsAbsolutePath(array $paths)
     {
@@ -61,7 +63,7 @@ class ConfigurationLocatorTest extends TestCase
      * Test cases for testLocateFindsAbsolutePath().
      * 
      * @return string[][][]
-     * @see testLocateFindsAbsolutePath()
+     * @see    testLocateFindsAbsolutePath()
      */
     public function provideTestLocateFindsAbsolutePath()
     {
@@ -78,9 +80,9 @@ class ConfigurationLocatorTest extends TestCase
     /**
      * locate() should find paths from the include path
      * 
-     * @param string[] $paths
+     * @param        string[] $paths
      * @dataProvider provideTestLocateFindsIncludePath
-     * @see ConfigurationLocator::locate();
+     * @see          ConfigurationLocator::locate();
      */
     public function testLocateFindsIncludePath($includePath, array $paths)
     {
@@ -99,7 +101,7 @@ class ConfigurationLocatorTest extends TestCase
      * Test cases for testLocateFindsIncludePath().
      * 
      * @return string[][][]
-     * @see testLocateFindsIncludePath()
+     * @see    testLocateFindsIncludePath()
      */
     public function provideTestLocateFindsIncludePath()
     {

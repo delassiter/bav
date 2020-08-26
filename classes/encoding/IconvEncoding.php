@@ -6,7 +6,6 @@ namespace malkusch\bav;
  * Wrapper for the iconv Functions. If you use this wrapper
  * PHP must be compiled with these functions.
  *
- *
  * Copyright (C) 2006  Markus Malkusch <markus@malkusch.de>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,12 +22,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage dataBackend
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2006 Markus Malkusch
  * @deprecated 1.0.1 PHP 5.6.0 deprecated the iconv_* methods
  */
 class IconvEncoding extends Encoding
@@ -44,7 +42,7 @@ class IconvEncoding extends Encoding
 
     /**
      * @throws UnsupportedEncodingException
-     * @param String $encoding
+     * @param  String $encoding
      */
     public function __construct($encoding = 'UTF-8')
     {
@@ -62,9 +60,9 @@ class IconvEncoding extends Encoding
     }
 
     /**
-     * @param String $string
-     * @param int $offset
-     * @param int $length
+     * @param  String $string
+     * @param  int    $offset
+     * @param  int    $length
      * @return String
      */
     public function substr($string, $offset, $length = null)
@@ -76,8 +74,8 @@ class IconvEncoding extends Encoding
 
     /**
      * @throws EncodingException
-     * @param String $string
-     * @param String $from_encoding
+     * @param  String $string
+     * @param  String $from_encoding
      * @return $string the encoded string
      */
     public function convert($string, $from_encoding)

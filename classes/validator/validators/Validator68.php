@@ -21,12 +21,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2006 Markus Malkusch
  */
 class Validator68 extends ValidatorChain
 {
@@ -60,23 +59,23 @@ class Validator68 extends ValidatorChain
     protected function getResult()
     {
         switch (strlen($this->account)) {
-            case 10:
-                return $this->account{3} == 9 && $this->validator10->isValid($this->account);
+        case 10:
+            return $this->account[3] == 9 && $this->validator10->isValid($this->account);
 
-            case 9:
-                if ($this->account >= 400000000 && $this->account <= 499999999) {
-                    return false;
-
-                }
-                return parent::getResult();
-
-            case 6:
-            case 7:
-            case 8:
-                return parent::getResult();
-
-            default:
+        case 9:
+            if ($this->account >= 400000000 && $this->account <= 499999999) {
                 return false;
+
+            }
+            return parent::getResult();
+
+        case 6:
+        case 7:
+        case 8:
+            return parent::getResult();
+
+        default:
+            return false;
 
         }
     }

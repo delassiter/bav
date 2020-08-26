@@ -10,8 +10,8 @@ use \malkusch\index\IndexException;
  * This is the easiest way to use BAV. BAV can work as a standalone application without
  * any DBS.
  *
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @author  Markus Malkusch <markus@malkusch.de>
+ * @link    bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @license WTFPL
  */
 class FileDataBackend extends DataBackend
@@ -84,7 +84,7 @@ class FileDataBackend extends DataBackend
      *
      * Be aware that this needs some amount of memory.
      *
-     * @param String $file
+     * @param  String $file
      * @throws DataBackendIOException
      * @throws FileException
      */
@@ -128,7 +128,7 @@ class FileDataBackend extends DataBackend
     }
 
     /**
-     * @see DataBackend::uninstall()
+     * @see    DataBackend::uninstall()
      * @throws DataBackendIOException
      */
     public function uninstall()
@@ -140,7 +140,7 @@ class FileDataBackend extends DataBackend
     }
 
     /**
-     * @see DataBackend::install()
+     * @see    DataBackend::install()
      * @throws DataBackendIOException
      */
     public function install()
@@ -151,7 +151,7 @@ class FileDataBackend extends DataBackend
     /**
      * This method works only if your PHP is compiled with cURL.
      *
-     * @see DataBackend::update()
+     * @see    DataBackend::update()
      * @throws DataBackendIOException
      * @throws FileException
      * @throws DownloaderException
@@ -165,20 +165,20 @@ class FileDataBackend extends DataBackend
         $uriPicker = new DOMURIPicker();
         $path = $uriPicker->pickURI($content, new \DateTime());
 
-        if (strlen($path) > 0 && $path{0} != "/") {
+        if (strlen($path) > 0 && $path[0] != "/") {
             $path = sprintf("/%s/%s", dirname(self::DOWNLOAD_URI), $path);
 
         }
         $pathParts = explode('/', $path);
         foreach ($pathParts as $i => $part) {
             switch ($part) {
-                case '..':
-                    unset($pathParts[$i-1]);
-                    // fall-through as the current part ("..") should be removed as well.
+            case '..':
+                unset($pathParts[$i-1]);
+                // fall-through as the current part ("..") should be removed as well.
 
-                case '.':
-                    unset($pathParts[$i]);
-                    break;
+            case '.':
+                unset($pathParts[$i]);
+                break;
             }
 
         }
@@ -209,7 +209,7 @@ class FileDataBackend extends DataBackend
      * @throws DataBackendIOException
      * @throws DataBackendException
      * @return Bank[]
-     * @see DataBackend::getAllBanks()
+     * @see    DataBackend::getAllBanks()
      */
     public function getAllBanks()
     {
@@ -238,8 +238,8 @@ class FileDataBackend extends DataBackend
     /**
      * @throws DataBackendIOException
      * @throws BankNotFoundException
-     * @param String $bankID
-     * @see DataBackend::getNewBank()
+     * @param  String $bankID
+     * @see    DataBackend::getNewBank()
      * @return Bank
      */
     public function getNewBank($bankID)
@@ -267,7 +267,7 @@ class FileDataBackend extends DataBackend
     }
 
     /**
-     * @see DataBackend::getMainAgency()
+     * @see    DataBackend::getMainAgency()
      * @throws DataBackendException
      * @throws NoMainAgencyException
      * @return Agency
@@ -299,7 +299,7 @@ class FileDataBackend extends DataBackend
     }
 
     /**
-     * @see DataBackend::getAgenciesForBank()
+     * @see    DataBackend::getAgenciesForBank()
      * @throws DataBackendIOException
      * @throws DataBackendException
      * @return Agency[]
@@ -401,8 +401,8 @@ class FileDataBackend extends DataBackend
     /**
      * Returns bank agencies for a given BIC.
      *
-     * @todo This method is inefficient. Add index based implementation.
-     * @param string $bic BIC
+     * @todo   This method is inefficient. Add index based implementation.
+     * @param  string $bic BIC
      * @return Agency[]
      */
     public function getBICAgencies($bic)

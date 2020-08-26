@@ -29,7 +29,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4",
-        "doctrine/orm": "^2"
+        "doctrine/orm": "^2",
+        "phpcompatibility/php-compatibility": "^9.3"
     },
     "archive": {
         "exclude": ["/tests"]

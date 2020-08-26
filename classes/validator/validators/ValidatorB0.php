@@ -19,12 +19,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2006 Markus Malkusch
  */
 class ValidatorB0 extends Validator
 {
@@ -56,7 +55,7 @@ class ValidatorB0 extends Validator
 
     protected function validate()
     {
-        $this->validator = array_search($this->account{7}, array(1, 2, 3, 6)) !== false
+        $this->validator = array_search($this->account[7], array(1, 2, 3, 6)) !== false
                          ? $this->mode1
                          : $this->mode2;
     }
@@ -67,7 +66,7 @@ class ValidatorB0 extends Validator
     protected function getResult()
     {
         return strlen(ltrim($this->account, '0')) === 10
-            && $this->account{0} !== '8'
+            && $this->account[0] !== '8'
             && $this->validator->isValid($this->account);
     }
 }

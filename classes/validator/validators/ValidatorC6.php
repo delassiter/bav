@@ -19,12 +19,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2007 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2007 Markus Malkusch
  */
 class ValidatorC6 extends Validator
 {
@@ -64,8 +63,8 @@ class ValidatorC6 extends Validator
 
     protected function validate()
     {
-        $transformation = array_key_exists($this->account{0}, self::$transformation)
-                        ? self::$transformation[$this->account{0}]
+        $transformation = array_key_exists($this->account[0], self::$transformation)
+                        ? self::$transformation[$this->account[0]]
                         : '';
         $this->transformedAccount = $transformation . substr($this->account, 1);
         $this->validator->setNormalizedSize(9 + strlen($transformation));
@@ -76,7 +75,7 @@ class ValidatorC6 extends Validator
      */
     protected function getResult()
     {
-        return in_array($this->account{0}, array_keys(self::$transformation))
+        return in_array($this->account[0], array_keys(self::$transformation))
              ? $this->validator->isValid($this->transformedAccount)
              : false;
     }

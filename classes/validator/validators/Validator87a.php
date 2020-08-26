@@ -21,12 +21,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2006 Markus Malkusch
  */
 class Validator87a extends Validator
 {
@@ -36,8 +35,8 @@ class Validator87a extends Validator
     }
 
      /**
-     * @return bool
-     */
+      * @return bool
+      */
     protected function getResult()
     {
         $accountID = $this->account;
@@ -51,7 +50,7 @@ class Validator87a extends Validator
         $konto  = array();
 
         for ($i = 0; $i < strlen($accountID); $i++) {
-            $konto[$i+1] = $accountID{$i};
+            $konto[$i+1] = $accountID[$i];
         }
 
         $i = 4;
@@ -63,18 +62,18 @@ class Validator87a extends Validator
 
         while ($i < 10) {
             switch ($konto[$i]) {
-                case 0:
-                    $konto[$i] = 5;
-                    break;
-                case 1:
-                    $konto[$i] = 6;
-                    break;
-                case 5:
-                    $konto[$i] = 10;
-                    break;
-                case 6:
-                    $konto[$i] = 1;
-                    break;
+            case 0:
+                $konto[$i] = 5;
+                break;
+            case 1:
+                $konto[$i] = 6;
+                break;
+            case 5:
+                $konto[$i] = 10;
+                break;
+            case 6:
+                $konto[$i] = 1;
+                break;
             }
 
             if ($c2 == $d2) {

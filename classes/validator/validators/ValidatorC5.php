@@ -19,12 +19,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2007 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2007 Markus Malkusch
  */
 class ValidatorC5 extends Validator
 {
@@ -70,39 +69,39 @@ class ValidatorC5 extends Validator
         $length  = strlen($account);
 
         switch ($length) {
-            case 6:
-            case 9:
-                if ($account{0} < 9) {
-                    $this->validator = $this->mode1;
-                }
-                break;
+        case 6:
+        case 9:
+            if ($account[0] < 9) {
+                $this->validator = $this->mode1;
+            }
+            break;
 
-            case 8:
-                if ($account{0} >= 3 && $account{0} <= 5) {
+        case 8:
+            if ($account[0] >= 3 && $account[0] <= 5) {
+                $this->validator = $this->mode4;
+
+            }
+            break;
+
+        case 10:
+            if ($account[0] == 1 || $account[0] >= 4 && $account[0] <= 6 || $account[0] == 9) {
+                $this->validator = $this->mode2;
+
+            } elseif ($account[0] == 3) {
+                $this->validator = $this->mode3;
+
+            } else {
+                $circle = substr($account, 0, 2);
+                if ($circle == 70 || $circle == 85) {
                     $this->validator = $this->mode4;
 
                 }
-                break;
+            }
+            break;
 
-            case 10:
-                if ($account{0} == 1 || $account{0} >= 4 && $account{0} <= 6 || $account{0} == 9) {
-                    $this->validator = $this->mode2;
-
-                } elseif ($account{0} == 3) {
-                    $this->validator = $this->mode3;
-
-                } else {
-                    $circle = substr($account, 0, 2);
-                    if ($circle == 70 || $circle == 85) {
-                        $this->validator = $this->mode4;
-
-                    }
-                }
-                break;
-
-            default:
-                $this->validator = null;
-                break;
+        default:
+            $this->validator = null;
+            break;
         }
     }
 

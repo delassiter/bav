@@ -19,12 +19,11 @@ namespace malkusch\bav;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *
- * @package classes
+ * @package    classes
  * @subpackage validator
- * @author Markus Malkusch <markus@malkusch.de>
- * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @author     Markus Malkusch <markus@malkusch.de>
+ * @link       bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @copyright  Copyright (C) 2006 Markus Malkusch
  */
 abstract class Validator
 {
@@ -93,7 +92,7 @@ abstract class Validator
      * zeros, wich lead to unexpected results if not treated as a string (
      * e.g. (int) 0020012357 evaluates to (string) '4199663').
      *
-     * @param string $account bank account
+     * @param  string $account bank account
      * @return bool
      */
     public function isValid($account)
@@ -148,13 +147,13 @@ abstract class Validator
      */
     protected function getChecknumber()
     {
-        return $this->account{$this->getNormalizedPosition($this->checknumberPosition)};
+        return $this->account[$this->getNormalizedPosition($this->checknumberPosition)];
     }
 
     /**
      * converts negative positions.
      *
-     * @param int $pos
+     * @param  int $pos
      * @return int
      * @throws ValidatorOutOfBoundsException
      */
@@ -175,7 +174,7 @@ abstract class Validator
     /**
      * Some validators need this
      *
-     * @param int $int
+     * @param  int $int
      * @return int
      */
     protected function crossSum($int)
@@ -184,7 +183,7 @@ abstract class Validator
         $str_int = (string) $int;
         for ($i = 0; $i < strlen($str_int); $i++) {
             //$sum = bcadd($str_int{$i}, $sum);
-            $sum += $str_int{$i};
+            $sum += $str_int[$i];
 
         }
         return $sum;
@@ -192,7 +191,7 @@ abstract class Validator
 
     /**
      * @throws ValidatorOutOfBoundsException
-     * @param int $int
+     * @param  int $int
      */
     protected function normalizeAccount($size)
     {
@@ -217,7 +216,7 @@ abstract class Validator
 
         }
         $bankID = $this->bank->getBankID();
-        if ($bankID{3} != 5) {
+        if ($bankID[3] != 5) {
             throw new ValidatorESERException();
 
         }
@@ -230,7 +229,7 @@ abstract class Validator
 
         }
         $accountPart = ltrim(substr($account, 2), '0');
-        $eser        = $blzPart.$account{0}.$account{1}.$accountPart;
+        $eser        = $blzPart.$account[0].$account[1].$accountPart;
 
         return $eser;
     }
@@ -249,7 +248,7 @@ abstract class Validator
             throw new ValidatorESERException();
 
         }
-        if ($bankID{3} != 5) {
+        if ($bankID[3] != 5) {
             throw new ValidatorESERException();
 
         }
@@ -257,9 +256,9 @@ abstract class Validator
         $blzPart0 = substr($bankID, -4, 2);
         $blzPart1 = substr($bankID, -1);
 
-        $accountPart0 = $account{0};
-        $t            = $account{1};
-        $p            = $account{2};
+        $accountPart0 = $account[0];
+        $t            = $account[1];
+        $p            = $account[2];
         $accountTail  = ltrim(substr($account, 3), '0');
 
         $eser = $blzPart0.$t.$blzPart1.$accountPart0.$p.$accountTail;
@@ -273,7 +272,7 @@ abstract class Validator
 
     protected function getEserChecknumber()
     {
-        return $this->account{$this->getEserChecknumberPosition()};
+        return $this->account[$this->getEserChecknumberPosition()];
     }
 
     protected function isBetween($a, $b)
