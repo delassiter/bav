@@ -25,7 +25,7 @@ class Downloader
     public function __construct()
     {
         $this->handle = curl_init();
-        if (! is_resource($this->handle)) {
+        if (!$this->handle) {
             throw new DownloaderException("Failed initializing curl");
 
         }
