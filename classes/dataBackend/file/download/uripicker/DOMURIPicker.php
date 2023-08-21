@@ -40,23 +40,11 @@ class DOMURIPicker implements URIPicker
 
         $xpath = new \DOMXpath($doc);
 
-        $result = $xpath->query("(//a[contains(@href, '.txt')]/@href)");
+        $result = $xpath->query("(//a[contains(@href, 'blz-aktuell-txt-data.txt')]/@href)");
 
         foreach ($result as $item) {
             $link = $item->value;
-            $dateResult = $xpath->query("(//a[contains(@href, '".$link."')])");
-            $dateRange= $dateResult->item(0)->nodeValue??null;
-
-            $matchCount = preg_match_all('/\d{2}\.\d{2}\.\d{4}/', $dateRange, $matches);
-
-            if ($matchCount !== 2) {
-                continue;
-            }
-
-            $minDate = new \DateTime($matches[0][0]);
-            $maxDate = new \DateTime($matches[0][1]);
-
-            if ($minDate <= $currentDate && $currentDate <= $maxDate) {
+            if (!empty($link)) {
                 return $link;
             }
         }
