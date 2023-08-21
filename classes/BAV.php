@@ -1,82 +1,236 @@
-<?php 
+<?php
 
-
-
-
+namespace malkusch\bav;
 
 /**
- * BAV is the super class of the Bank Account Validator project.
- * Every class will inherit this. The main purpose of this class is
- * an implementation of a namespace and set some configuration like
- * the project's encoding.
+ * Facade for BAV's API.
  *
- * Copyright (C) 2006  Markus Malkusch <markus@malkusch.de>
+ * This class provides methods for validation of German bank accounts.
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
+ * If you don't inject a {@link Configuration} the facade will use the
+ * {@link ConfigurationRegistry}. The registry provides per default the
+ * {@link DefaultConfiguration}.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- *
- * @package classes
  * @author Markus Malkusch <markus@malkusch.de>
- * @copyright Copyright (C) 2006 Markus Malkusch
+ * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
+ * @license WTFPL
+ * @api
+ * @see ConfigurationRegistry
  */
-abstract class BAV {
+class BAV
+{
 
-
-    static protected
     /**
-     * @var BAV_Encoding
+     * @var Configuration
      */
-    $encoding;
+    private $configuration;
 
+    /**
+     * @var DataBackend
+     */
+    private $backend;
+    
+    /**
+     * @var ContextValidation
+     */
+    private $contextValidation;
 
-    static public function classConstructor() {
-        try {
-            self::setEncoding('UTF-8');
-            
-        } catch (BAV_EncodingException_Unsupported $e) {
-            self::setEncoding('ISO-8859-15');
+    /**
+     * Inject the configuration.
+     *
+     * If the $configuration is null the configuration from
+     * {@link ConfigurationRegistry::getConfiguration()} will be used.
+     *
+     * @see ConfigurationRegistry
+     */
+    public function __construct(Configuration $configuration = null)
+    {
+        if (is_null($configuration)) {
+            $configuration = ConfigurationRegistry::getConfiguration();
+
+        }
+        $this->configuration = $configuration;
+
+        $this->backend = $configuration->getDataBackendContainer()->getDataBackend();
         
+        $this->contextValidation = new ContextValidation($this->backend);
+    }
+
+    /**
+     * Returns the data backend
+     *
+     * @return DataBackend
+     */
+    public function getDataBackend()
+    {
+        return $this->backend;
+    }
+
+    /**
+     * Updates bav with a new bundesbank file.
+     *
+     * You might consider enabling automatic update with setting
+     * AutomaticUpdatePlan as configuration.
+     *
+     * @see AutomaticUpdatePlan
+     * @see Configuration::setUpdatePlan()
+     * @throws DataBackendException
+     */
+    public function update()
+    {
+        $this->getDataBackend()->update();
+    }
+
+    /**
+     * Returns true if both the bank exists and the account is valid.
+     *
+     * @throws DataBackendException for some reason the validator might not be implemented
+     * @param string $bankID
+     * @param string $account
+     * @see isValidBank()
+     * @see getBank()
+     * @see Bank::isValid()
+     * @return bool
+     */
+    public function isValidBankAccount($bankID, $account)
+    {
+        try {
+            $bank = $this->getBank($bankID);
+            return $bank->isValid($account);
+
+        } catch (BankNotFoundException $e) {
+            return false;
+
         }
     }
+
     /**
-     * If you want to use another encoding
+     * Returns true if the account is valid for the current context.
      *
-     * @throws BAV_EncodingException_Unsupported
-     * @param mixed $encoding
-     * @see BAV_Encoding
-     */
-    static public function setEncoding($encoding) {
-        self::$encoding = ($encoding instanceof BAV_Encoding)
-                        ? $encoding
-                        : BAV_Encoding::getInstance($encoding);
-    }
-    /**
-     * @return BAV_Version version of BAV
-     */
-    static public function get_bav_version() {
-        return new BAV_Version('0.27');
-    }
-    /**
-     * Returns the version of the API. Note that different BAV versions
-     * may have the same API version.
+     * You have to have called isValidBank() before! If the current context
+     * is no valid bank every account will validate to true.
      *
-     * @return BAV_Version version of BAV's API
+     * @param string $account
+     * @see isValidBank()
+     * @see ContextValidation::isValidAccount()
+     * @throws InvalidContextException isValidBank() was not called before.
+     * @return bool
      */
-    static public function get_bav_api_version() {
-        return new BAV_Version('2.4');
+    public function isValidAccount($account)
+    {
+        return $this->contextValidation->isValidAccount($account);
     }
 
+    /**
+     * Returns true if a bank exists
+     *
+     * @throws DataBackendException
+     * @param string $bankID
+     * @return bool
+     * @see ContextValidation::isValidBank()
+     */
+    public function isValidBank($bankID)
+    {
+        return $this->contextValidation->isValidBank($bankID);
+    }
+    
+    /**
+     * Every bank has one main agency.
+     *
+     * This agency is not included in getAgencies().
+     *
+     * @throws DataBackendException
+     * @throws BankNotFoundException
+     * @param string $bankID Bank id (Bankleitzahl)
+     * @see Bank::getMainAgency()
+     * @see getAgencies()
+     * @return Agency
+     */
+    public function getMainAgency($bankID)
+    {
+        return $this->getBank($bankID)->getMainAgency();
+    }
 
+    /**
+     * A bank may have more agencies.
+     *
+     * The main agency is not included in this list.
+     *
+     * @param string $bankID Bank id (Bankleitzahl)
+     * @throws DataBackendException
+     * @throws BankNotFoundException
+     * @return Agency[]
+     */
+    public function getAgencies($bankID)
+    {
+        return $this->getBank($bankID)->getAgencies();
+    }
+    
+    /**
+     * With this method you get the Bank objects for certain IDs. Note
+     * that a call to this method with an identical id will return the same
+     * objects.
+     *
+     * @throws BankNotFoundException
+     * @throws DataBackendException
+     * @param string $bankID
+     * @return Bank
+     * @see DataBackend::isValidBank()
+     */
+    public function getBank($bankID)
+    {
+        return $this->backend->getBank($bankID);
+    }
+
+    /**
+     * Returns bank agencies for a given BIC.
+     *
+     * @param string $bic BIC
+     * @return Agency[]
+     */
+    public function getBICAgencies($bic)
+    {
+        return $this->backend->getBICAgencies(BICUtil::normalize($bic));
+    }
+
+    /**
+     * Returns if a bic is valid.
+     *
+     * @param string $bic BIC
+     * @return bool
+     */
+    public function isValidBIC($bic)
+    {
+        return $this->backend->isValidBIC(BICUtil::normalize($bic));
+    }
+    
+    /**
+     * Returns the third call back parameter for filter_var() for validating
+     * a bank.
+     *
+     * filter_var($bankID, FILTER_CALLBACK, $bav->getValidBankFilterCallback());
+     *
+     * @return array
+     * @see isValidBank()
+     * @see filter_var()
+     */
+    public function getValidBankFilterCallback()
+    {
+        return $this->contextValidation->getValidBankFilterCallback();
+    }
+    
+    /**
+     * Returns the third call back parameter for filter_var() for validating
+     * a bank account.
+     *
+     * filter_var($account, FILTER_CALLBACK, $bav->getValidBankFilterCallback());
+     *
+     * @return array
+     * @see isValidAccount()
+     * @see filter_var()
+     */
+    public function getValidAccountFilterCallback()
+    {
+        return $this->contextValidation->getValidAccountFilterCallback();
+    }
 }
