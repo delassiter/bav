@@ -135,8 +135,6 @@ class InstantAutoloader
      */
     public function autoload($class)
     {
-        $this->_normalizeClass($class);
-
         /*
          * spl_autoload_call() runs the complete stack,
          * even though the class is already defined by
