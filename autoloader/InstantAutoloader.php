@@ -208,6 +208,10 @@ class InstantAutoloader
      */
     public static function _callClassConstructor($class, $constructorName)
     {
+        if (!\class_exists($class)) {
+            return false;
+        }
+
         $reflectionClass = new \ReflectionClass($class);
         if (!$reflectionClass->hasMethod($constructorName)) {
             return false;
